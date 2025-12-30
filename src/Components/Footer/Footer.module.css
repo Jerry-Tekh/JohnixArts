@@ -1,0 +1,130 @@
+.footer {
+  background: #7f56d9;
+  color: #ffffff;
+  padding: 3rem 1.5rem;
+}
+
+/* ===== TOP ===== */
+.top {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.top h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+/* ===== SUBSCRIBE SECTION ===== */
+.subscribeSection {
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 4rem 0;
+  margin-bottom: 2.5rem;
+}
+
+.form {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* INPUTS */
+.form input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+  padding: 0.5rem 0.2rem;
+  color: #ffffff;
+  outline: none;
+  min-width: 180px;
+}
+
+.form input::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* BUTTON */
+.form button {
+  background: #ffffff;
+  color: #7f56d9;
+  border: none;
+  padding: 0.6rem 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== BOTTOM ===== */
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 1rem 3rem;
+}
+
+/* SOCIAL ICONS */
+.socials {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.socials a {
+  color: #ffffff;
+  font-size: 1.4rem;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.socials a:hover {
+  transform: scale(1.15);
+  opacity: 0.85;
+}
+
+/* LINKS */
+.links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+}
+
+.links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: #ffffff;
+  transition: width 0.3s ease;
+}
+
+.links a:hover::after {
+  width: 100%;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  .bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .form {
+    gap: 1rem;
+  }
+}

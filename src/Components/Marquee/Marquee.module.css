@@ -1,0 +1,21 @@
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  background-color: #fff;
+  color: #676767;
+  padding: 2rem 0; 
+}
+
+.track {
+  display: inline-flex;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+.track span {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding-right: 3rem;
+}

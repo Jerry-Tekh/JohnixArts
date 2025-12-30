@@ -1,0 +1,162 @@
+.header {
+  position: relative;
+  padding: 1.5rem 1rem 2rem;
+  background: #ffffff;
+  border-bottom: 1px solid #eee;
+}
+
+/* Top bar (menu + cart) */
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Hamburger button */
+.menuBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none;
+
+
+}
+
+/* Cart */
+.cart {
+  position: relative;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.cartCount {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background: #ff4c29;
+  color: white;
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+
+
+
+
+/* Title */
+.title {
+  text-align: center;
+  margin: 1rem 0;
+  font-size: 2.9rem;
+  font-weight: 400;
+  font-family: var(--banner-font);
+}
+
+/* Desktop Nav */
+.navDesktop {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.navDesktop a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  position: relative;
+
+  font-family: var(--banner3-font);
+
+
+}
+
+.navDesktop a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #ff4c29;
+  left: 0;
+  bottom: -5px;
+  transition: width 0.3s ease;
+}
+
+.navDesktop a:hover::after {
+  width: 100%;
+}
+
+/* Mobile Nav Overlay */
+.mobileNav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(6px);
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 0.45s ease, opacity 0.45s ease;
+  z-index: 1000;
+}
+
+.open {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Close button */
+.closeBtn {
+  position: absolute;
+  top: 1.2rem;
+  left: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Mobile Nav Links */
+.mobileNavLinks {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.mobileNavLinks a {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #222;
+  font-weight: 600;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.mobileNavLinks a:hover {
+  transform: scale(1.05);
+  color: #ff4c29;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .navDesktop {
+    display: none;
+  }
+
+  .menuBtn {
+    display: block;
+  }
+
+  .title {
+    margin-top: 0.5rem;
+  }
+}
+
+
+
+
+
+
+

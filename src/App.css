@@ -1,0 +1,80 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'DancingScript';
+  src : url(./assets/Fonts/static/DancingScript-VariableFont_wght.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PoppinsEBI';
+  src : url(./assets/Fonts/Poppins/Poppins-ExtraBoldItalic.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PoppinsR';
+  src : url(./assets/Fonts/Poppins/Poppins-Regular.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PoppinsL';
+  src : url(./assets/FontS/Poppins/Poppins-Light.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'DancingM';
+  src : url(./assets/Fonts/static/DancingScript-Medium.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'DancingR';
+  src : url(./assets/Fonts/static/DancingScript-Regular.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+
+
+
+
+
+
+:root {
+  --primary: #ff4c29;
+  --bg: #ffffff;
+  --paragraph: #6f6b80;;
+  --text: #0a0a0a;
+  --muted: #9a9a9a;
+  --hightLight: rgb(0, 150, 136);
+  --Active: rgb(255, 255, 0);
+  --BgActive : #f4f4f4;
+  --banner-font: 'DancingScript', sans-serif;
+  --banner1-font: 'PoppinsEBI', sans-serif;
+  --banner2-font: 'PoppinsR', sans-serif;
+  --banner3-font: 'PoppinsL', sans-serif;
+  --banner4-font: 'DancingR', sans-serif;
+  --banner5-font: 'DancingM', sans-serif;
+
+
+}
+
+body {
+    font-family: var(--banner3-font);
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 0 4rem ;
+  max-width: 1600px;
+  margin: 0 auto;
+}
