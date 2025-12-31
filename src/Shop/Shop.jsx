@@ -4,6 +4,8 @@ import Select from "react-select";
 import { motion } from "framer-motion";
 import { FiCheck, FiPlus, FiMinus } from "react-icons/fi";
 import { categories, artworks } from './ShopDetails.jsx';
+import video from '../assets/Video/herobackground.mp4'
+
 
 
 
@@ -27,23 +29,19 @@ const Shop = () => {
       {/* ===== HERO SECTION ===== */}
       <section className={styles.hero}>
         <div className={styles.heroImage}>
+          <video src={video} autoPlay muted loop />
           <div className={styles.heroText}>
-            <h3>
-              <TypewriterEffect words={["Buy happiness made with love from JohnixArts!"]} />
-            </h3>
+            <h2 className={styles.heroBold}>STUDIO DRY</h2>
+            <hr className={styles.heroLine} />
             <p className={styles.slim}>
               Handmade stationery, art prints & paintings.
               From concept to design and packaging
             </p>
-            <p className={styles.bold}>
-              Timeless pieces for every space
-            </p>
+
           </div>
         </div>
 
-        <div className={styles.heroSideImage}>
-          <img src={paint2} alt="Art" />
-        </div>
+
       </section>
 
       {/* ===== BANNER ===== */}
@@ -65,51 +63,55 @@ const Shop = () => {
       </section>
 
       {/* ===== CATEGORY + GRID ===== */}
-      <section className={styles.content}>
-        {/* CATEGORY FILTER */}
-        <aside className={styles.categories}>
-          <p>Category</p>
-          <hr />
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              className={
-                activeCategory === cat
-                  ? styles.active
-                  : ""
-              }
-              onClick={() => setActiveCategory(cat)}
-            >
-              {cat}
-            </button>
-          ))}
-          <hr />
-        </aside>
+      <section className={styles.stickySection}>
+        <div className={styles.content}>
 
-        {/* ART GRID */}
-        <div className={styles.grid}>
-          {filteredArtworks.map((art, index) => (
-            <motion.div
-              key={art.id}
-              className={`${styles.card} ${art.featured ? styles.featured : ""
-                }`}
-              initial={{
-                opacity: 0,
-                x: index % 2 === 0 ? -80 : 80,
-              }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <img src={art.image} alt={art.name} />
+          {/* CATEGORY FILTER */}
+          <aside className={styles.categories}>
+            <p>Category</p>
+            <hr />
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                className={
+                  activeCategory === cat
+                    ? styles.active
+                    : ""
+                }
+                onClick={() => setActiveCategory(cat)}
+              >
+                {cat}
+              </button>
+            ))}
+            <hr />
+          </aside>
 
-              <h4>{art.name}</h4>
+          {/* ART GRID */}
+          <div className={styles.grid}>
+            {filteredArtworks.map((art, index) => (
+              <motion.div
+                key={art.id}
+                className={`${styles.card} ${art.featured ? styles.featured : ""
+                  }`}
+                initial={{
+                  opacity: 0,
+                  x: index % 2 === 0 ? -80 : 80,
+                }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+              >
+                <img src={art.image} alt={art.name} />
 
-              <PriceSelector sizes={art.sizes} />
-            </motion.div>
-          ))}
+                <h4>{art.name}</h4>
+
+                <PriceSelector sizes={art.sizes} />
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
+
     </div>
   );
 };
@@ -136,7 +138,7 @@ const PriceSelector = ({ sizes }) => {
         <button onClick={() => setQty(Math.max(1, qty - 1))}>
           <FiMinus />
         </button>
-        <input value={qty} readOnly />
+        <input className={styles.quantity} value={qty} readOnly />
         <button onClick={() => setQty(qty + 1)}>
           <FiPlus />
         </button>

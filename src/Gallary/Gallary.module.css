@@ -1,0 +1,133 @@
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 3rem;
+  padding: 4rem;
+  background: #fff;
+  position: relative;
+}
+
+/* ===== BASE CELL ===== */
+.cell {
+  position: relative;
+  overflow: hidden;
+}
+
+.cell img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.cell:hover img {
+  transform: scale(1.05);
+}
+
+/* ===== LINES ===== */
+.lineHorizontal, .lineHorizontal2, .lineHorizontal3, .lineHorizontal4, .lineHorizontal5 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #111;
+  z-index: 10;
+  display: none;
+}
+
+.lineVerticalLeft, .lineVerticalRight {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: #111;
+  z-index: 10;
+  display: none;
+}
+
+/* Desktop lines */
+.lineHorizontal {
+  top: 50%;
+  display: block;
+}
+
+.lineVerticalLeft {
+  left: 0;
+  display: block;
+}
+
+.lineVerticalRight {
+  right: 0;
+  display: block;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+
+  /* Medium lines */
+  .lineHorizontal {
+    top: 33.33%;
+    display: block;
+  }
+
+  .lineHorizontal2 {
+    top: 66.66%;
+    display: block;
+  }
+
+  .lineVerticalLeft {
+    left: 50%;
+    display: block;
+  }
+
+  .lineVerticalRight {
+    display: none;
+  }
+
+  .lineHorizontal3, .lineHorizontal4, .lineHorizontal5 {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem 1rem;
+  }
+
+  /* Small lines */
+  .lineHorizontal {
+    top: 16.66%;
+    display: block;
+  }
+
+  .lineHorizontal2 {
+    top: 33.33%;
+    display: block;
+  }
+
+  .lineHorizontal3 {
+    top: 50%;
+    display: block;
+  }
+
+  .lineHorizontal4 {
+    top: 66.66%;
+    display: block;
+  }
+
+  .lineHorizontal5 {
+    top: 83.33%;
+    display: block;
+  }
+
+  .lineVerticalLeft, .lineVerticalRight {
+    display: none;
+  }
+}

@@ -6,7 +6,7 @@
 /* GRID */
 .grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   perspective: 1000px;
 }
@@ -76,36 +76,6 @@
   color: #333;
 }
 
-/* ===== SKELETON ===== */
-.skeletonCard {
-  background: #ececec;
-  padding: 2rem 1.5rem;
-  animation: pulse 1.4s infinite;
-}
-
-.skelImg {
-  height: 180px;
-  background: #ddd;
-}
-
-.skelText {
-  height: 14px;
-  width: 60%;
-  background: #d5d5d5;
-  margin: 1.2rem auto 0;
-}
-
-@keyframes pulse {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 
 /* RESPONSIVE */
 @media (max-width: 900px) {

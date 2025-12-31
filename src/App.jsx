@@ -5,7 +5,10 @@ import Shop from './Shop/Shop.jsx';
 import Marquee from './Components/Marquee/Marquee.jsx';
 import OriginalArtWorks from './Originals/Originals.jsx';
 import Footer from './Components/Footer/Fotter.jsx';
+import ArtistAdvert from './Adverts/Adverts.jsx';
 
+
+import ArtGallery from './Gallary/Gallary.jsx';
 
 function App() {
 
@@ -20,7 +23,8 @@ function App() {
           <span>🖼 Limited Editions</span>
           <span>💝 Made with Love</span>
         </Marquee>
-        <OriginalArtWorks/>
+        <ArtistAdvert/>
+        <ArtGallery/>
     <Footer/>
       </div>
     </>
