@@ -7,8 +7,12 @@ import OriginalArtWorks from './Originals/Originals.jsx';
 import Footer from './Components/Footer/Fotter.jsx';
 import ArtistAdvert from './Adverts/Adverts.jsx';
 
+import  CategorySection from './Category/Category.jsx';
 
-import ArtGallery from './Gallary/Gallary.jsx';
+
+
+
+import ArtGallerySection  from './Gallary/Gallary.jsx';
 
 function App() {
 
@@ -17,6 +21,7 @@ function App() {
       <div>
         <Header />
         <Shop />
+        <CategorySection/>
         <Marquee speed={60}>
           <span>🎨 Handmade Art Prints</span>
           <span>📦 Worldwide Shipping</span>
@@ -24,7 +29,7 @@ function App() {
           <span>💝 Made with Love</span>
         </Marquee>
         <ArtistAdvert/>
-        <ArtGallery/>
+        <ArtGallerySection/>
     <Footer/>
       </div>
     </>

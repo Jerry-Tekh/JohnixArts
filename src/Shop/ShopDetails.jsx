@@ -78,3 +78,57 @@ export const artworks = [
     featured: true,
   },
 ];
+
+
+
+
+
+<section className={styles.stickySection}>
+          <div className={styles.bgImage} />
+        <div className={styles.content}>
+
+          {/* CATEGORY FILTER */}
+          <aside className={styles.categories}>
+            <p>Category</p>
+            
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                className={
+                  activeCategory === cat
+                    ? styles.active
+                    : ""
+                }
+                onClick={() => setActiveCategory(cat)}
+              >
+                {cat}
+              </button>
+            ))}
+            
+          </aside>
+
+          {/* ART GRID */}
+          <div className={styles.grid}>
+            {filteredArtworks.map((art, index) => (
+              <motion.div
+                key={art.id}
+                className={`${styles.card} ${art.featured ? styles.featured : ""
+                  }`}
+                initial={{
+                  opacity: 0,
+                  x: index % 2 === 0 ? -80 : 80,
+                }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+              >
+                <img src={art.image} alt={art.name} />
+
+                <h4>{art.name}</h4>
+
+                <PriceSelector sizes={art.sizes} />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section> 

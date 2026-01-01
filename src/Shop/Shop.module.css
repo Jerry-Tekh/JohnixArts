@@ -125,11 +125,27 @@
 /* ===== CONTENT ===== */
 
 /* ===== STICKY SHOP SECTION ===== */
+
+.bgImage {
+  position: absolute;
+  inset: 0;
+  background-image: url("../assets/ShopImages/PEN5.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.9;
+  z-index: 0;
+}
+
 .stickySection {
   position: relative;
   height: 200vh; /* gives space for scroll release */
   margin: 4rem 0;
+   background: #e2e2e2;
+   
 }
+
+
 
 /* Content becomes sticky */
 .content {
@@ -139,14 +155,6 @@
   display: flex;
   gap: 2rem;
   overflow: hidden;
-  background: #fff;
-}
-
-
-
-.content {
-  display: flex;
-  gap: 2rem;
 }
 
 /* CATEGORY */
@@ -159,6 +167,10 @@
   flex-direction: column;
   gap: 1rem;
   font-size: 1.5rem;
+  border-top: 7px solid #fff;
+  border-bottom: 7px solid #fff;
+  padding: 2rem;
+  
 }
 
 .categories button {
@@ -182,12 +194,21 @@
   padding-right: 1rem;
   background: #dedede;
   background: #e2e2e2;
+
+
+
+
+
+  
    padding: 2rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 
   scroll-behavior: smooth;
+  border-left: 7px solid #fff;
+  
+  
 }
 
 .card {
