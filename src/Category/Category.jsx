@@ -5,8 +5,29 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FiPlus, FiMinus } from "react-icons/fi";
 
 
+import Marquee from './../Components/Marquee/Marquee.jsx';
+
+
 import  styles from './Category.module.css';
-import paint9 from './../assets/ShopImages/PAINT9.jpg';
+
+
+import PAINT9 from './../assets/ShopImages/PAINT9.jpg';
+import COLOR1 from './../assets/ShopImages/COLOR1.jpg';
+import COLOR2 from './../assets/ShopImages/COLOR2.jpg';
+import COLOR3 from './../assets/ShopImages/COLOR3.jpg';
+import COLOR4 from './../assets/ShopImages/COLOR4.jpg';
+import COLOR5 from './../assets/ShopImages/COLOR5.jpg';
+
+
+
+import PAINT2 from './../assets/ShopImages/PAINT2.jpg';
+
+import PAINT6 from './../assets/ShopImages/PAINT6.jpg';
+import PAINT7 from './../assets/ShopImages/PAINT7.jpg';
+
+
+
+
 
 
 // DEMO DATA (replace with yours later)
@@ -17,7 +38,7 @@ const artworks = [
     id: 1,
     name: "Golden Flow",
     category: "Abstract",
-    image: "/images/art1.jpg",
+    image: COLOR5,
     sizes: [
       { label: "Small", value: "S", price: 10000 },
       { label: "Medium", value: "M", price: 15000 },
@@ -28,7 +49,7 @@ const artworks = [
     id: 2,
     name: "Silent Face",
     category: "Portrait",
-    image: "/images/art2.jpg",
+    image: COLOR1,
     sizes: [
       { label: "Medium", value: "M", price: 18000 },
       { label: "Large", value: "L", price: 23000 },
@@ -38,7 +59,37 @@ const artworks = [
     id: 3,
     name: "Green Escape",
     category: "Nature",
-    image: "/images/art3.jpg",
+    image: COLOR3,
+    sizes: [
+      { label: "Small", value: "S", price: 12000 },
+      { label: "Medium", value: "M", price: 17000 },
+    ],
+  },
+  {
+    id: 4,
+    name: "Green Escape",
+    category: "Nature",
+    image: COLOR2,
+    sizes: [
+      { label: "Small", value: "S", price: 12000 },
+      { label: "Medium", value: "M", price: 17000 },
+    ],
+  },
+  {
+    id: 5,
+    name: "Green Escape",
+    category: "Nature",
+    image: COLOR4,
+    sizes: [
+      { label: "Small", value: "S", price: 12000 },
+      { label: "Medium", value: "M", price: 17000 },
+    ],
+  },
+  {
+    id: 6,
+    name: "Green Escape",
+    category: "Nature",
+    image: COLOR3,
     sizes: [
       { label: "Small", value: "S", price: 12000 },
       { label: "Medium", value: "M", price: 17000 },
@@ -84,15 +135,16 @@ const CategorySection = () => {
           <AnimatePresence mode="wait">
             <motion.div
               key={activeCategory}
-              className={styles.grid}
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -40 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
             >
-              {filteredArtworks.map((art) => (
-                <ArtCard key={art.id} art={art} />
-              ))}
+              <Marquee speed={30} pauseOnHover={true} reverseOnHover={true}>
+                {filteredArtworks.map((art) => (
+                  <ArtCard key={art.id} art={art} />
+                ))}
+              </Marquee>
             </motion.div>
           </AnimatePresence>
         </div>
@@ -115,29 +167,8 @@ const ArtCard = ({ art }) => {
         <img src={art.image} alt={art.name} />
       </div>
 
-      <h4 className={styles.artName}>{art.name}</h4>
-
-      <p className={styles.price}>
-        ₦{selectedSize.price * qty}
-      </p>
-
-      <Select
-        options={art.sizes}
-        value={selectedSize}
-        onChange={setSelectedSize}
-        className={styles.select}
-        classNamePrefix="select"
-      />
-
-      <div className={styles.qty}>
-        <button onClick={() => setQty(Math.max(1, qty - 1))}>
-          <FiMinus />
-        </button>
-        <span>{qty}</span>
-        <button onClick={() => setQty(qty + 1)}>
-          <FiPlus />
-        </button>
-      </div>
+      
+      
     </motion.div>
   );
 };

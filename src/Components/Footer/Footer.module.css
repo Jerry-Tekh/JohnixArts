@@ -25,10 +25,12 @@
 
 .form {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   gap: 1.5rem;
   flex-wrap: wrap;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 /* INPUTS */
@@ -69,7 +71,7 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 1.5rem;
-  padding: 1rem 3rem;
+  padding: 1rem 0;
 }
 
 /* SOCIAL ICONS */
@@ -118,13 +120,135 @@
 }
 
 /* ===== RESPONSIVE ===== */
-@media (max-width: 600px) {
-  .bottom {
-    flex-direction: column;
-    text-align: center;
+@media (max-width: 1024px) {
+  .footer {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .subscribeSection {
+    padding: 3rem 0;
   }
 
   .form {
+    gap: 1.2rem;
+  }
+
+  .form input {
+    min-width: 160px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 2rem 1rem;
+  }
+
+  .top h3 {
+    font-size: 1.4rem;
+  }
+
+  .subscribeSection {
+    padding: 2.5rem 0;
+    margin-bottom: 2rem;
+  }
+
+  .form {
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .form input {
+    min-width: 80%;
+    max-width: 90%;
+    text-align: center;
+  }
+
+  .form button {
+    width: 100%;
+    max-width: 200px;
+    margin: 0.5rem auto;
+  }
+
+  .bottom {
+    padding: 1rem 1rem;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer {
+    padding: 1.5rem 1rem;
+  }
+
+  .top {
+    margin-bottom: 1.5rem;
+  }
+
+  .top h3 {
+    font-size: 1.2rem;
+  }
+
+  .subscribeSection {
+    padding: 2rem 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .form {
+    gap: 0.8rem;
+  }
+
+  .bottom {
+    flex-direction: column;
+    text-align: center;
+    padding: 0.5rem 0;
+    gap: 1.5rem;
+  }
+
+  .socials {
+    justify-content: center;
+  }
+
+  .links {
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 1rem;
+  }
+
+  .socials a {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 1rem 0.5rem;
+  }
+
+  .top h3 {
+    font-size: 1.1rem;
+  }
+
+  .subscribeSection {
+    padding: 1.5rem 0;
+  }
+
+  .form input {
+    font-size: 0.9rem;
+    padding: 1rem 0.1rem;
+  }
+
+  .form button {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .socials a {
+    font-size: 1.1rem;
+  }
+
+  .links a {
+    font-size: 0.9rem;
   }
 }

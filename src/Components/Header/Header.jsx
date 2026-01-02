@@ -5,10 +5,14 @@ import { FiMenu, FiX, FiShoppingCart } from "react-icons/fi";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const cartCount = 3; 
+  const cartCount = 3;
 
   return (
     <header className={styles.header}>
+      <a href="#contact" className={styles.contactBtn}>
+        Contact Me
+      </a>
+
       {/* Top bar */}
       <div className={styles.topBar}>
         <button
@@ -39,9 +43,8 @@ const Header = () => {
 
       {/* Mobile Nav Overlay */}
       <div
-        className={`${styles.mobileNav} ${
-          menuOpen ? styles.open : ""
-        }`}
+        className={`${styles.mobileNav} ${menuOpen ? styles.open : ""
+          }`}
       >
         <button
           className={styles.closeBtn}

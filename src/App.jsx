@@ -8,7 +8,7 @@ import Footer from './Components/Footer/Fotter.jsx';
 import ArtistAdvert from './Adverts/Adverts.jsx';
 
 import  CategorySection from './Category/Category.jsx';
-
+import Banner from './Banner/Banner.jsx';
 
 
 
@@ -22,12 +22,7 @@ function App() {
         <Header />
         <Shop />
         <CategorySection/>
-        <Marquee speed={60}>
-          <span>🎨 Handmade Art Prints</span>
-          <span>📦 Worldwide Shipping</span>
-          <span>🖼 Limited Editions</span>
-          <span>💝 Made with Love</span>
-        </Marquee>
+        <Banner/>
         <ArtistAdvert/>
         <ArtGallerySection/>
     <Footer/>

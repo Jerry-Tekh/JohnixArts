@@ -1,7 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
-import video from "../assets/Video/Advert.mp4"; // replace if needed
+//import video from "../assets/Video/Adverts.mp4"; // replace if needed
+import video from "../assets/Video/Adverts.mp4"; // replace if needed
 import styles from './Adverts.module.css';
+
+
+
 
 
 const ArtistAdvert = () => {

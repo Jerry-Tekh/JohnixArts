@@ -1,11 +1,12 @@
 .shop {
-  padding: 2rem 1rem;
+  padding: 0;
 }
 
 /* ===== HERO ===== */
 .hero {
   width: 100%;
-  margin-bottom: 4rem;
+  /* margin-bottom: 4rem;*/
+
   position: relative;
 }
 
@@ -20,7 +21,7 @@
 }
 
 .heroImage::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -40,9 +41,6 @@
   z-index: -1;
 }
 
-
-
-
 .heroText {
   padding: 1.2rem;
   text-align: center;
@@ -52,7 +50,7 @@
   color: #fff;
 }
 
-.heroLine{
+.heroLine {
   width: 30%;
   margin: 0.5rem auto;
 }
@@ -62,6 +60,8 @@
   letter-spacing: 1rem;
   font-weight: 900;
   width: 98%;
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  letter-spacing: clamp(0.3rem, 2vw, 1rem);
 }
 
 .slim {
@@ -76,7 +76,6 @@
   font-weight: 700;
   font-family: var(--banner4-font);
   font-size: 1.5rem;
-
 }
 
 .heroSideImage {
@@ -96,25 +95,28 @@
   object-fit: cover;
 }
 
-
 .heroImage,
 .heroSideImage {
   min-height: 600px;
 }
-
-
 
 /* ===== BANNER ===== */
 .banner {
   display: flex;
   justify-content: space-around;
   text-align: center;
-  margin-bottom: 4rem;
+  /*margin-bottom: 4rem;*/
   font-size: 1.5rem;
+  background: rgba(5, 5, 5, 0.1);
+  padding: 3rem 2rem;
+  position: relative;
+  z-index: 2;
 }
 
 .banner div {
   padding: 2.5rem 2rem;
+  position: relative;
+  z-index: 10;
 }
 
 .bannerMiddle {
@@ -141,11 +143,8 @@
   position: relative;
   height: 200vh; /* gives space for scroll release */
   margin: 4rem 0;
-   background: #e2e2e2;
-   
+  background: #e2e2e2;
 }
-
-
 
 /* Content becomes sticky */
 .content {
@@ -170,7 +169,6 @@
   border-top: 7px solid #fff;
   border-bottom: 7px solid #fff;
   padding: 2rem;
-  
 }
 
 .categories button {
@@ -195,28 +193,20 @@
   background: #dedede;
   background: #e2e2e2;
 
-
-
-
-
-  
-   padding: 2rem;
+  padding: 2rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 
   scroll-behavior: smooth;
   border-left: 7px solid #fff;
-  
-  
 }
 
 .card {
-
   background: transparent;
   transition: transform 0.4s ease;
   text-align: center;
-  padding: 2rem 0.2rem ;
+  padding: 2rem 0.2rem;
 }
 
 .card:hover {
@@ -235,43 +225,6 @@
 /* CONTROLS */
 .controls {
   margin-top: 1rem;
-}
-
-.price {
-  font-weight: 400;
-}
-
-.select{
-  margin: 0.5rem 0;
-}
-
-.qty {
-  display: flex;
-  align-items: center;
-  background-color: aquamarine;
-    background: #7f56d9;
-  color: #ffffff;
-  justify-content: space-between;
-  padding: 0.8rem 1.2rem;
-}
-
-.qty input {
-  width: 40px;
-  text-align: center;
-  border: none;
-  font-size: 1rem;
-  background: none;
-  color: #fff;
-  font-weight: 600;
-}
-
-.qty button {
-  font-size: 1rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #fff;
-  font-weight: 900;
 }
 
 /* ===== RESPONSIVE ===== */
@@ -298,6 +251,28 @@
   }
 }
 
+@media (max-width: 600px) {
+  .banner {
+    flex-direction: column;
+  }
+
+  .banner {
+    font-size: 1.5rem;
+    padding: 1rem 1rem;
+  }
+
+  .banner div {
+    padding: 1rem 0rem;
+  }
+
+  .bannerMiddle {
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid #b9b9b9;
+    border-bottom: 1px solid #b9b9b9;
+  }
+}
+
 @media (max-width: 500px) {
   .grid {
     grid-template-columns: 1fr;
@@ -306,4 +281,8 @@
   .featured {
     grid-column: span 1;
   }
+  .heroImage {
+  height: 90vh;
+ 
+}
 }

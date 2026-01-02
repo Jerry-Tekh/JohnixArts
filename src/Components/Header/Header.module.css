@@ -2,6 +2,8 @@
   position: relative;
   padding: 1.5rem 1rem 2rem;
   background: #ffffff;
+   background: rgba(10, 10, 10, 0.3);
+   background: rgba(5, 5, 5, 0.1);
   border-bottom: 1px solid #eee;
 }
 
@@ -10,7 +12,37 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 10;
+  position: relative;
 }
+
+
+
+.contactBtn {
+  position: absolute;
+  top: 1.2rem;
+  left: 1.5rem;
+
+  padding: 0.6rem 1.2rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+
+  color: #7f56d9;
+  border: 1.5px solid #7f56d9;
+
+  background: transparent;
+  transition: all 0.3s ease;
+  z-index: 20;
+}
+
+.contactBtn:hover {
+  background: #7f56d9;
+  color: #fff;
+  transform: translateY(-1px);
+}
+
 
 /* Hamburger button */
 .menuBtn {
@@ -51,6 +83,8 @@
   font-size: 2.9rem;
   font-weight: 400;
   font-family: var(--banner-font);
+  z-index: 10;
+  position: relative;
 }
 
 /* Desktop Nav */
@@ -58,6 +92,8 @@
   display: flex;
   justify-content: center;
   gap: 2rem;
+  z-index: 10;
+  position: relative;
 }
 
 .navDesktop a {
@@ -67,6 +103,7 @@
   position: relative;
 
   font-family: var(--banner3-font);
+  z-index: 10;
 
 
 }
@@ -76,7 +113,8 @@
   position: absolute;
   width: 0;
   height: 2px;
-  background: #ff4c29;
+  background: #7f56d9;
+
   left: 0;
   bottom: -5px;
   transition: width 0.3s ease;
@@ -141,6 +179,9 @@
 
 /* Responsive */
 @media (max-width: 500px) {
+    .contactBtn {
+    display: none;
+  }
   .navDesktop {
     display: none;
   }

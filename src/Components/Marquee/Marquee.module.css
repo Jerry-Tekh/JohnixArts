@@ -1,9 +1,9 @@
 .marquee {
   width: 100%;
   overflow: hidden;
-  background-color: #fff;
+  background-color: transparent;
   color: #676767;
-  padding: 2rem 0; 
+  padding: 0;
 }
 
 .track {
@@ -12,10 +12,8 @@
   will-change: transform;
 }
 
-.track span {
+.track div {
   display: inline-flex;
   align-items: center;
-  font-size: 1.5rem;
-  font-weight: 600;
-  padding-right: 3rem;
+  gap: 2rem;
 }
