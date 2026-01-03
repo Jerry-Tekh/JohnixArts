@@ -5,13 +5,17 @@ import styles from './Gallary.module.css';
 
 
 
-import img1 from "../assets/ShopImages/PEN1.jpg";
+import img5 from "../assets/ShopImages/PEN1.jpg";
 import img2 from "../assets/ShopImages/PEN2.jpg";
-import img3 from "../assets/ShopImages/PEN3.jpg";
-import img4 from "../assets/ShopImages/PEN4.jpg";
-import img5 from "../assets/ShopImages/PAINT2.jpg";
+import img3 from "../assets/ShopImages/POR1.jpg";
+import img4 from "../assets/ShopImages/PEN3.jpg";
+import img1 from "../assets/ShopImages/PAINT2.jpg";
+import img7 from "../assets/ShopImages/PAINT2.jpg";
+import img9 from "../assets/ShopImages/POR2.jpg";
+import img6 from "../assets/ShopImages/POR4.jpg";
+import img8 from "../assets/ShopImages/ABS1.jpg";
 
-const images = [img1, img2, img3, img4, img5];
+const images = [img1, img2, img3, img4, img5, img6];
 
 const containerVariants = {
   hidden: {},
@@ -53,25 +57,48 @@ const ArtGallerySection = () => {
 
       <div className={styles.container}>
         {/* LEFT — TEXT (SLOW PARALLAX) */}
-        <motion.aside
-          className={styles.text}
-          style={{ y: textY }}
-        >
-          <span className={styles.label}>Gallery</span>
-          <h2>
-            Curated <br /> Art Collection
-          </h2>
+        {/* LEFT — TEXT */}
+        <aside className={styles.text}>
 
-          <p>
-            A carefully selected body of work that reflects emotion,
-            movement, and depth. Each piece is an exploration of form,
-            texture, and meaning — created to live beyond the frame.
-          </p>
+          {/* Parallax content ONLY */}
+          <motion.div style={{ y: textY }}>
+            <span className={styles.label}>Gallery</span>
 
-          <p className={styles.note}>
-            Scroll to explore the collection
-          </p>
-        </motion.aside>
+            <h2>
+              Curated <br /> Art Collection
+            </h2>
+
+            <p>
+              A carefully selected body of work that reflects emotion,
+              movement, and depth. Each piece is an exploration of form,
+              texture, and meaning — created to live beyond the frame.
+            </p>
+
+            <p className={styles.note}>
+              Scroll to explore the collection
+            </p>
+
+
+            {/* STICKY CTA — NO TRANSFORMS */}
+          <div className={styles.stickyCta}>
+            <div className={styles.animationContainer}>
+              Need a
+              <div className={styles.flip}>
+                <div><div>Custom Portrait</div></div>
+                <div><div>Meaningful Gift</div></div>
+                <div><div>One-of-a-Kind Artwork</div></div>
+              </div>
+              <a href="#contact" className={styles.awesomeLink}>
+                Hire Me
+              </a>
+            </div>
+          </div>
+
+          </motion.div>
+
+          
+        </aside>
+
 
         {/* RIGHT — GALLERY (FASTER PARALLAX + REVEAL) */}
         <motion.div

@@ -4,7 +4,7 @@ import Select from "react-select";
 import { motion } from "framer-motion";
 import { FiCheck, FiPlus, FiMinus } from "react-icons/fi";
 //import { categories, artworks } from './ShopDetails.jsx';
-import video from '../assets/Video/Herobackground.mp4'
+import video from '../assets/Video/HeroBackground.mp4'
 
 
 
@@ -25,7 +25,7 @@ const Shop = () => {
       );*/}
 
   return (
-    <div className={styles.shop}>
+    <div className={styles.shop} id="shop">
       {/* ===== HERO SECTION ===== */}
       {/* ===== HERO SECTION ===== */}
 <section className={styles.hero}>
