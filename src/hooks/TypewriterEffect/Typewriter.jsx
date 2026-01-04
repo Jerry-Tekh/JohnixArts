@@ -1,6 +1,8 @@
 import React from "react";
 import Typewriter from "typewriter-effect";
-import styles from "./Typewriter.module.css";
+
+
+
 
 const TypewriterEffect = ({
   words,
