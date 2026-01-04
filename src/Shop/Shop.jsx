@@ -1,71 +1,108 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./Shop.module.css";
-import Select from "react-select";
-import { motion } from "framer-motion";
-import { FiCheck, FiPlus, FiMinus } from "react-icons/fi";
-//import { categories, artworks } from './ShopDetails.jsx';
-import video from '../assets/Video/HeroBackground.mp4'
+
+// Background image (applied via JSX)
 
 
+import bgImage from './../assets/ShopImages/ABS2.jpg';
 
+// Art images
 
-import TypewriterEffect from './../hooks/TypewriterEffect/Typewriter.jsx';
+import art1 from './../assets/ShopImages/POR5.jpg';
+import art2 from './../assets/ShopImages/PEN3.jpg';
+import art3 from './../assets/ShopImages/POR4.jpg';
+import art4 from './../assets/ShopImages/POR2.jpg';
 
-import paint2 from './../assets/ShopImages/PAINT2.jpg';
+const artCollection = [
+  {
+    id: 1,
+    title: "Color Portrait",
+    image: art1,
+    prices: [
+      { size: "A4", amount: "₦12,000" },
+      { size: "A3", amount: "₦18,000" },
+      { size: "A2", amount: "₦25,000" },
+    ],
+  },
+  {
+    id: 2,
+    title: "Charcoal Portrait",
+    image: art2,
+    prices: [
+      { size: "A4", amount: "₦15,000" },
+      { size: "A3", amount: "₦22,000" },
+      { size: "A2", amount: "₦35,000" },
+    ],
+  },
+  {
+    id: 3,
+    title: "Paint Portrait",
+    image: art3,
+    prices: [
+      { size: "A3", amount: "₦20,000" },
+      { size: "A2", amount: "₦30,000" },
+      { size: "A2", amount: "₦55,000" },
+    ],
+  },
+  {
+    id: 4,
+    title: "Pen Portrait",
+    image: art4,
+    prices: [
+      { size: "A3", amount: "₦20,000" },
+      { size: "A2", amount: "₦30,000" },
+      { size: "A2", amount: "₦55,000" },
+    ],
+  },
+];
 
-
-const Shop = () => {
-  const [activeCategory, setActiveCategory] = useState("All");
-
- {/*} const filteredArtworks =
-    activeCategory === "All"
-      ? artworks
-      : artworks.filter(
-        (art) => art.category === activeCategory
-      );*/}
-
+const ArtPriceCollection = () => {
   return (
-    <div className={styles.shop} id="shop">
-      {/* ===== HERO SECTION ===== */}
-      {/* ===== HERO SECTION ===== */}
-<section className={styles.hero}>
-  <div className={styles.heroImage}>
-    <video src={video} autoPlay muted loop playsInline />
-    <div className={styles.heroText}>
-      <h2 className={styles.heroBold}>STUDIO DRY</h2>
-      <hr className={styles.heroLine} />
-      <p className={styles.slim}>
-        Handmade stationery, art prints & paintings.
-        From concept to design and packaging
-      </p>
-    </div>
-  </div>
-</section>
+    <section
+      className={styles.section}
+      style={{ backgroundImage: `url(${bgImage})` }}
+    >
+      <div className={styles.overlay} />
 
-{/* ===== BANNER ===== */}
-<section className={styles.banner}>
-  <div>
-    <FiCheck size={22} color="#7f56d9" />
-    <p>Premium Materials</p>
-  </div>
+      <div className={styles.container}>
+        {/* Header */}
+        <header className={styles.header}>
+          <span className={styles.tag}>Art Collection</span>
+          <h2>Artwork Pricing</h2>
+          <p>
+            A curated selection of original artworks, with pricing based on
+            size and presentation.
+          </p>
 
-  <div className={styles.bannerMiddle}>
-    <FiCheck size={22} color="#7f56d9" />
-    <p>100% Original Artwork</p>
-  </div>
+          <span>Scroll left to view art pricing</span>
+        </header>
 
-  <div>
-    <FiCheck size={22} color="#7f56d9" />
-    <p>Worldwide Shipping</p>
-  </div>
-</section>
+        {/* Gallery */}
+        <div className={styles.gallery}>
+          {artCollection.map((art) => (
+            <div key={art.id} className={styles.card}>
+              <div className={styles.imageWrap}>
+                <img src={art.image} alt={art.title} />
+              </div>
 
+              <div className={styles.info}>
+                <h3>{art.title}</h3>
 
-
-
-    </div>
+                <div className={styles.priceList}>
+                  {art.prices.map((price, index) => (
+                    <div key={index} className={styles.priceRow}>
+                      <span className={styles.size}>{price.size}</span>
+                      <span className={styles.amount}>{price.amount}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
 
-
-export default Shop;
+export default ArtPriceCollection;

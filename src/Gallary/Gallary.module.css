@@ -1,29 +1,33 @@
 .section {
   position: relative;
   min-height: 140vh;
-  overflow: visible;
+  padding: 2rem 0 8rem;
 }
 
-/* ===== STATIC BACKGROUND ===== */
+/* Full-bleed background */
 .bgImage {
   position: absolute;
   inset: 0;
-  background-image: url("../assets/ShopImages/PAINT2.jpg");
+  background-image: url("../assets/ShopImages/NAT2.jpg");
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
   opacity: 0.2;
   z-index: 0;
 }
 
-/* ===== CONTAINER ===== */
-.container {
+/* NEW: padding lives here */
+.inner {
   position: relative;
   z-index: 1;
-  display: flex;
   padding: 6rem 4rem;
+}
+
+/* Container now only handles layout */
+.container {
+  display: flex;
   gap: 4rem;
 }
+
 
 /* ===== LEFT TEXT ===== */
 .text {
@@ -132,22 +136,35 @@
   .text h2 {
     font-size: 2rem;
   }
+  .inner {
+
+  padding: 2rem 0;
+}
+ .container {
+        padding: 0 0.6rem;
+    }
+
+.imageCard {
+   
+    padding: 0.5rem;
+}
 }
 
+
 /* ===== ANIMATED TEXT ===== */
-@import url('https://fonts.googleapis.com/css?family=Roboto:700');
+
 
 .animationContainer {
   color: #999;
   text-transform: uppercase;
   font-size: 36px;
   font-weight: bold;
-  padding-top: 4rem;
   position: relative;
   width: 100%;
   display: block;
   font-family: 'Roboto', sans-serif;
   margin-top: 2rem;
+  z-index: 20;
 }
 
 .flip {

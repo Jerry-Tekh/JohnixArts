@@ -1,0 +1,288 @@
+.shop {
+  padding: 0;
+}
+
+/* ===== HERO ===== */
+.hero {
+  width: 100%;
+  /* margin-bottom: 4rem;*/
+
+  position: relative;
+}
+
+.heroImage {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.heroImage::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+.heroImage video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.heroText {
+  padding: 1.2rem;
+  text-align: center;
+  font-weight: 900;
+  position: relative;
+  z-index: 1;
+  color: #fff;
+}
+
+.heroLine {
+  width: 30%;
+  margin: 0.5rem auto;
+}
+.heroText h2 {
+  font-size: 4rem;
+  font-family: var(--banner2-font);
+  letter-spacing: 1rem;
+  font-weight: 900;
+  width: 98%;
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  letter-spacing: clamp(0.3rem, 2vw, 1rem);
+}
+
+.slim {
+  font-weight: 300;
+  font-size: 1rem;
+  padding: 2.5rem 0;
+  font-family: var(--banner3-font);
+  word-spacing: 0.8rem;
+}
+
+.bold {
+  font-weight: 700;
+  font-family: var(--banner4-font);
+  font-size: 1.5rem;
+}
+
+.heroSideImage {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.heroSideImage img {
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.heroSideImage video {
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.heroImage,
+.heroSideImage {
+  min-height: 600px;
+}
+
+/* ===== BANNER ===== */
+.banner {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  /*margin-bottom: 4rem;*/
+  font-size: 1.5rem;
+  background: rgba(5, 5, 5, 0.1);
+  padding: 3rem 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.banner div {
+  padding: 2.5rem 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+.bannerMiddle {
+  border-left: 1px solid #b9b9b9;
+  border-right: 1px solid #b9b9b9;
+}
+
+/* ===== CONTENT ===== */
+
+/* ===== STICKY SHOP SECTION ===== */
+
+.bgImage {
+  position: absolute;
+  inset: 0;
+  background-image: url("../assets/ShopImages/PEN5.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.9;
+  z-index: 0;
+}
+
+.stickySection {
+  position: relative;
+  height: 200vh; /* gives space for scroll release */
+  margin: 4rem 0;
+  background: #e2e2e2;
+}
+
+/* Content becomes sticky */
+.content {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  gap: 2rem;
+  overflow: hidden;
+}
+
+/* CATEGORY */
+.categories {
+  width: 25%;
+  position: sticky;
+  top: 2rem;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 1.5rem;
+  border-top: 7px solid #fff;
+  border-bottom: 7px solid #fff;
+  padding: 2rem;
+}
+
+.categories button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  text-align: left;
+  font-size: 1.2rem;
+}
+
+.active {
+  color: #ff4c29;
+}
+
+/* GRID */
+.grid {
+  width: 75%;
+  height: 100%;
+  overflow-y: auto;
+  padding-right: 1rem;
+  background: #dedede;
+  background: #e2e2e2;
+
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+
+  scroll-behavior: smooth;
+  border-left: 7px solid #fff;
+}
+
+.card {
+  background: transparent;
+  transition: transform 0.4s ease;
+  text-align: center;
+  padding: 2rem 0.2rem;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.featured {
+  grid-column: span 2;
+}
+
+.card img {
+  width: 100%;
+  display: block;
+}
+
+/* CONTROLS */
+.controls {
+  margin-top: 1rem;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .stickySection {
+    height: auto;
+  }
+
+  .content {
+    position: relative;
+    height: auto;
+    flex-direction: column;
+  }
+
+  .grid {
+    height: auto;
+    overflow: visible;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .categories {
+    position: relative;
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .banner {
+    flex-direction: column;
+  }
+
+  .banner {
+    font-size: 1.5rem;
+    padding: 1rem 1rem;
+  }
+
+  .banner div {
+    padding: 1rem 0rem;
+  }
+
+  .bannerMiddle {
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid #b9b9b9;
+    border-bottom: 1px solid #b9b9b9;
+  }
+}
+
+@media (max-width: 500px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .featured {
+    grid-column: span 1;
+  }
+  .heroImage {
+  height: 90vh;
+ 
+}
+}

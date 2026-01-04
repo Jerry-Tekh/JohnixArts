@@ -1,12 +1,20 @@
 .section {
   position: relative;
   min-height: 100vh;
-  background: url("/images/shop-bg.jpg") center / cover no-repeat;
+  /*background: url('./../assets/ShopImages/POR7.jpg') center / cover no-repeat;*/
    height: 100%; /* lock to viewport */
     overflow: hidden;
   
 }
-
+.bgImage {
+  position: absolute;
+  inset: 0;
+  background-image: url("../assets/ShopImages/POR6.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.1;
+  z-index: 0;
+}
 .overlay {
   position: absolute;
   inset: 0;
@@ -66,6 +74,8 @@
   background: #7f56d9;
   border-color: #7f56d9;
 }
+
+
 
 /* RIGHT */
 

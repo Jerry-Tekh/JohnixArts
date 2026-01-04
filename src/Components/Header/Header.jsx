@@ -1,17 +1,19 @@
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./Header.module.css";
 
 import { FiMenu, FiX, FiShoppingCart } from "react-icons/fi";
 
 const Header = () => {
+  const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
   const cartCount = 3;
 
   return (
     <header className={styles.header}>
-      <a href="#contact" className={styles.contactBtn}>
+      <Link to="/contact" className={styles.contactBtn}>
         Contact Me
-      </a>
+      </Link>
 
       {/* Top bar */}
       <div className={styles.topBar}>
@@ -34,10 +36,10 @@ const Header = () => {
 
       {/* Desktop Nav */}
       <nav className={styles.navDesktop}>
-        <a href="#">Shop</a>
-        <a href="#">Originals</a>
-        <a href="#">Art Painings</a>
-        <a href="#">Contact</a>
+        <Link to = "/" > <a href="#">Home</a> </Link>
+        <Link to = "/shop" > <a href="#">Shop</a> </Link>
+        <span onClick={() => { if (window.location.pathname !== '/') { navigate('/'); } window.location.hash = '#Original'; }} style={{cursor: 'pointer'}}>Originals</span>
+        <Link to="/contact">Contact</Link>
         <a href="#">Our Story</a>
       </nav>
 
@@ -55,10 +57,11 @@ const Header = () => {
         </button>
 
         <nav className={styles.mobileNavLinks}>
-          <a href="#" onClick={() => setMenuOpen(false)}>Home</a>
-          <a href="#" onClick={() => setMenuOpen(false)}>Shop</a>
-          <a href="#" onClick={() => setMenuOpen(false)}>About</a>
-          <a href="#" onClick={() => setMenuOpen(false)}>Contact</a>
+          <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
+          <Link to="/shop" onClick={() => setMenuOpen(false)}>Shop</Link>
+          <span onClick={() => { if (window.location.pathname !== '/') { navigate('/'); } window.location.hash = '#Original'; setMenuOpen(false); }} style={{cursor: 'pointer'}}>Originals</span>
+          <Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
+          <a href="#">Our Story</a>
         </nav>
       </div>
     </header>
