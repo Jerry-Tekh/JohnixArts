@@ -190,3 +190,8 @@
     height: 240px;
   }
 }
+@media (max-width: 500px) {
+  .section {padding: 7rem 0.2rem;}
+
+
+}

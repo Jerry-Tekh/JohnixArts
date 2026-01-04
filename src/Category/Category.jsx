@@ -148,11 +148,13 @@ const CategorySection = () => {
               exit={{ opacity: 0, y: -40 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
             >
+               <div className={styles.scrollRow}>
               <Marquee speed={30} pauseOnHover={true} reverseOnHover={true}>
                 {filteredArtworks.map((art) => (
                   <ArtCard key={art.id} art={art} />
                 ))}
               </Marquee>
+              </div>
             </motion.div>
           </AnimatePresence>
         </div>

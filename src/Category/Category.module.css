@@ -92,6 +92,47 @@
 }
 
 
+
+.gallery {
+  width: 75%;
+  height: 100%;
+  background: rgba(255,255,255,0.1);
+  padding: 2rem;
+  backdrop-filter: blur(6px);
+
+  overflow-x: auto;        /* 👈 enable horizontal scroll */
+  overflow-y: hidden;
+
+  display: flex;
+  align-items: center;
+
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Hide scrollbar but keep scroll */
+.gallery::-webkit-scrollbar {
+  display: none;
+}
+.gallery {
+  scrollbar-width: none;
+}
+
+.scrollRow {
+  display: flex;
+  gap: 2rem;
+  min-width: max-content; /* KEY for horizontal scroll */
+}
+
+.card {
+  scroll-snap-align: center;
+}
+
+.gallery {
+  scroll-snap-type: x mandatory;
+}
+
+
 /* CARD */
 
 .card {
@@ -195,5 +236,19 @@
   width: 500px;
   height: 500px; /* controlled frame */
 
+
 }
+
+}
+
+
+/*  DISABLE hover effects on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .card:hover img {
+    transform: none;
+  }
+
+  .card {
+    transform: none !important;
+  }
 }

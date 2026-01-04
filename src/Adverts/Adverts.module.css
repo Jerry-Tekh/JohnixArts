@@ -44,7 +44,7 @@
 .tag {
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   font-weight: 600;
   color: #7f56d9;
   margin-bottom: 1rem;
@@ -59,7 +59,7 @@
 }
 
 .description {
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 1.8;
   color: #444;
   max-width: 90%;

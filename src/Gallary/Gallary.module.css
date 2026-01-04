@@ -112,6 +112,10 @@
     padding: 4rem 2rem;
   }
 
+  .inner{
+    padding: 6rem 0.5rem;
+  }
+
   .text {
     width: 100%;
     position: relative;
@@ -133,6 +137,17 @@
     grid-template-columns: 1fr;
   }
 
+  .text {
+  padding: 0.5rem 2rem;
+  
+}
+.text span{
+  font-size: 1.3rem;
+}
+
+.text p{
+  font-size: 1.2rem;
+}
   .text h2 {
     font-size: 2rem;
   }
