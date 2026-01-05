@@ -238,8 +238,9 @@
   width: 500px;
   height: 500px; /* controlled frame */
 
-
 }
+
+ .section {min-height: 100%};
 
 }
 
@@ -253,4 +254,5 @@
   .card {
     transform: none !important;
   }
+
 }
