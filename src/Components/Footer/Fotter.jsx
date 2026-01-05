@@ -1,6 +1,8 @@
 import React from "react";
 import styles from "./Footer.module.css";
 import { FiFacebook, FiInstagram, FiLinkedin, FiTwitter } from "react-icons/fi";
+import LOGO from './../../assets/ShopImages/LOGO.png';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -45,8 +47,8 @@ const Footer = () => {
         </div>
 
         <div className={styles.links}>
-          <a href="#">Shop</a>
-          <a href="#">Contact</a>
+          <Link to="/shop" > <a href="#">Shop</a> </Link>
+          <Link to="/contact">Contact</Link>
         </div>
       </div>
     </footer>
