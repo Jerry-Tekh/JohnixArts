@@ -35,7 +35,7 @@ const ArtistAdvert = () => {
 
         <h2>
           Art That Speaks <br />
-          Beyond the Canvas
+          Beyond the Papers and Canvas
         </h2>
 
         <p className={styles.description}>

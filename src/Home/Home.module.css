@@ -66,7 +66,7 @@
 
 .slim {
   font-weight: 300;
-  font-size: 1rem;
+  font-size: 1.2rem;
   padding: 2.5rem 0;
   font-family: var(--banner3-font);
   word-spacing: 0.8rem;
@@ -282,7 +282,8 @@
     grid-column: span 1;
   }
   .heroImage {
-  height: 90vh;
+  height: 88vh;
  
 }
+
 }

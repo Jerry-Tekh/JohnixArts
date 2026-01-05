@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Footer.module.css";
-import { FiFacebook, FiInstagram, FiTwitter } from "react-icons/fi";
+import { FiFacebook, FiInstagram, FiLinkedin, FiTwitter } from "react-icons/fi";
 
 const Footer = () => {
   return (
@@ -30,14 +30,17 @@ const Footer = () => {
       {/* ===== SECTION 3: LINKS & SOCIALS ===== */}
       <div className={styles.bottom}>
         <div className={styles.socials}>
-          <a href="#" aria-label="Facebook">
+          <a href="https://web.facebook.com/john.ikechukwu.761402?rdid=s9Q3FW50Kz4siWg6&share_url=https%3A%2F%2Fweb.facebook.com%2Fshare%2F1ANAzcWR48%2F%3F_rdc%3D1%26_rdr#" aria-label="Facebook">
             <FiFacebook />
           </a>
-          <a href="#" aria-label="Instagram">
+          <a href="https://www.instagram.com/johnix_art/?igshid=YmMyMTA2M2Y%3D" aria-label="Instagram">
             <FiInstagram />
           </a>
-          <a href="#" aria-label="Twitter">
+          <a href="https://x.com/Johnix_art?s=20" aria-label="Twitter">
             <FiTwitter />
+          </a>
+          <a href="https://linktr.ee/johnike" aria-label="Linkedin">
+            <FiLinkedin />
           </a>
         </div>
 

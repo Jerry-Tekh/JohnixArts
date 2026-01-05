@@ -3,6 +3,8 @@ import Select from "react-select";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiPlus, FiMinus } from "react-icons/fi";
 import Marquee from './../Components/Marquee/Marquee.jsx';
+import {artworks} from './CategoryData.jsx';
+
 
 
 import styles from './Category.module.css';
@@ -18,13 +20,18 @@ import POR6 from './../assets/ShopImages/POR6.jpg';
 import POR9 from './../assets/ShopImages/POR9.jpg';
 
 import NAT1 from './../assets/ShopImages/NAT1.jpg';
+import NAT2 from './../assets/ShopImages/NAT1.jpg';
+import NAT3 from './../assets/ShopImages/NAT1.jpg';
+import NAT4 from './../assets/ShopImages/NAT1.jpg';
+import NAT5 from './../assets/ShopImages/NAT1.jpg';
+import NAT6 from './../assets/ShopImages/NAT1.jpg';
+
 
 import POR5 from './../assets/ShopImages/POR5.jpg';
 
 
 
-import PAINT6 from './../assets/ShopImages/PAINT6.jpg';
-import PAINT7 from './../assets/ShopImages/PAINT7.jpg';
+
 
 
 
@@ -32,9 +39,10 @@ import PAINT7 from './../assets/ShopImages/PAINT7.jpg';
 
 
 // DEMO DATA (replace with yours later)
-const categories = ["All", "Abstract", "Portrait", "Nature", "Modern"];
+//const categories = ["All", "Abstract", "Portrait", "Nature", "Modern"];
+const categories = ["All", "Abstract", "Portrait", "Nature"];
 
-const artworks = [
+/*const artworks = [
   {
     id: 1,
     name: "Golden Flow",
@@ -96,7 +104,7 @@ const artworks = [
       { label: "Medium", value: "M", price: 17000 },
     ],
   },
-];
+];*/
 
 const CategorySection = () => {
   const [activeCategory, setActiveCategory] = useState("All");

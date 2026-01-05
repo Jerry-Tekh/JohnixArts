@@ -4,7 +4,7 @@ import styles from "./Shop.module.css";
 // Background image (applied via JSX)
 
 
-import bgImage from './../assets/ShopImages/ABS2.jpg';
+import bgImage from './../assets/ShopImages/NAT3.jpg';
 
 // Art images
 
@@ -74,9 +74,8 @@ const ArtPriceCollection = () => {
             size and presentation.
           </p>
 
-          <span>Scroll left to view art pricing</span>
+          <span>Swap to view art pricing</span>
         </header>
-
         {/* Gallery */}
         <div className={styles.gallery}>
           {artCollection.map((art) => (

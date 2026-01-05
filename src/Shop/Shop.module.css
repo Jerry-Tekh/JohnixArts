@@ -7,7 +7,7 @@
 }
 
 
-.section::after {
+/*.section::after {
   content: "";
   position: absolute;
   right: 0;
@@ -16,7 +16,7 @@
   height: 100%;
   background: linear-gradient(to right, transparent, rgba(10,10,10,0.85));
   pointer-events: none;
-}
+}*/
 
 
 .overlay {
@@ -76,6 +76,7 @@
 
 .header span {
   font-size: 1.3rem;
+  color: #7c3aed;
 
 }
 
@@ -129,7 +130,7 @@
 .imageWrap {
   height: 340px;
   overflow: hidden;
-  padding: 0.15rem;
+  padding: 0.25rem;
 }
 
 .imageWrap img {

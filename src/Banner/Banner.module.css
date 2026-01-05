@@ -39,3 +39,14 @@
   margin-left: 2rem;
   color: #ddd;
 }
+
+@media (max-width: 500px) {
+ 
+
+.banner {
+  padding: 3rem 0;
+  font-size: 2rem;
+
+}
+
+}

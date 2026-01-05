@@ -48,11 +48,11 @@ const Home = () => {
   <div className={styles.heroImage}>
     <video src={video} autoPlay muted loop playsInline />
     <div className={styles.heroText}>
-      <h2 className={styles.heroBold}>STUDIO DRY</h2>
+      <h2 className={styles.heroBold}>JOHNIX ARTS</h2>
       <hr className={styles.heroLine} />
       <p className={styles.slim}>
-        Handmade stationery, art prints & paintings.
-        From concept to design and packaging
+        Handmade arts works, drawing & paintings.
+        From concept to branding and packaging
       </p>
     </div>
   </div>

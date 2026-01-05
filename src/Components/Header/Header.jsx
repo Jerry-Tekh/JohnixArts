@@ -4,6 +4,9 @@ import styles from "./Header.module.css";
 
 import { FiMenu, FiX, FiShoppingCart } from "react-icons/fi";
 
+import LOGO from './../../assets/ShopImages/LOGO.png';
+
+
 const Header = () => {
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -26,8 +29,9 @@ const Header = () => {
         </button>
 
         <div className={styles.cart}>
-          <FiShoppingCart size={26} />
-          <span className={styles.cartCount}>{cartCount}</span>
+          <img src={LOGO} alt="Johnix Arts Logo" className={styles.logo} />
+          {/*<FiShoppingCart size={26} />
+          <span className={styles.cartCount}>{cartCount}</span>*/}
         </div>
       </div>
 
