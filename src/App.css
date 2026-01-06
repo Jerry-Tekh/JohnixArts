@@ -77,3 +77,11 @@ body {
   max-width: 1600px;
   margin: 0 auto;
 }
+
+/* Landscape mode adjustments for better responsiveness */
+@media (orientation: landscape) and (max-width: 1024px) {
+  body {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+}

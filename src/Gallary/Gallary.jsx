@@ -113,7 +113,7 @@ const ArtGallerySection = () => {
                 className={styles.imageCard}
                 variants={imageVariants}
               >
-                <img src={img} alt={`Artwork ${index + 1}`} />
+                <img src={img} alt={`Artwork ${index + 1}`} onContextMenu={(e) => e.preventDefault()} onDragStart={(e) => e.preventDefault()} />
               </motion.div>
             ))}
           </motion.div>

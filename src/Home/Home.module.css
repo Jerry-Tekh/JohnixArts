@@ -220,6 +220,10 @@
 .card img {
   width: 100%;
   display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 /* CONTROLS */
@@ -286,4 +290,20 @@
  
 }
 
+}
+
+/* Landscape mode */
+@media (orientation: landscape) and (max-width: 1024px) {
+  .heroImage {
+    height: 70vh;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+
+  .featured {
+    grid-column: span 2;
+  }
 }

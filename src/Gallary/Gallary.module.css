@@ -57,7 +57,7 @@
 }
 
 .text p {
-  font-size: 0.95rem;
+  font-size: 1.2rem;
   line-height: 1.8;
   color: #444;
   margin-bottom: 1.5rem;
@@ -94,6 +94,10 @@
   width: 100%;
   display: block;
   transition: transform 0.6s ease;
+  user-select: none;
+  -webkit-user-drag: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .imageCard:hover {
@@ -247,4 +251,16 @@
   color: #999;
   margin-top: 200px;
   position: relative;
+}
+
+/* Landscape mode */
+@media (orientation: landscape) and (max-width: 1024px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  .imageCard {
+    width: 100%;
+  }
 }

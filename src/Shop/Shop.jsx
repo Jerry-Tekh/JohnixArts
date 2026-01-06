@@ -81,7 +81,7 @@ const ArtPriceCollection = () => {
           {artCollection.map((art) => (
             <div key={art.id} className={styles.card}>
               <div className={styles.imageWrap}>
-                <img src={art.image} alt={art.title} />
+                <img src={art.image} alt={art.title} onContextMenu={(e) => e.preventDefault()} onDragStart={(e) => e.preventDefault()} />
               </div>
 
               <div className={styles.info}>

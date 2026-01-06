@@ -122,7 +122,7 @@ export const artworks = [
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                <img src={art.image} alt={art.name} />
+                <img src={art.image} alt={art.name} onContextMenu={(e) => e.preventDefault()} onDragStart={(e) => e.preventDefault()} />
 
                 <h4>{art.name}</h4>
 

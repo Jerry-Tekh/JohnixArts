@@ -28,7 +28,7 @@ const Header = () => {
           <FiMenu size={26} />
         </button>
 
-        <div className={styles.cart}>
+        <div className={styles.logo}>
           <img src={LOGO} alt="Johnix Arts Logo" className={styles.logo} />
           {/*<FiShoppingCart size={26} />
           <span className={styles.cartCount}>{cartCount}</span>*/}

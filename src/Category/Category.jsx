@@ -118,10 +118,10 @@ const CategorySection = () => {
     <section className={styles.section}>
       {/* Overlay */}
       <div className={styles.bgImage} />
-      <div className={styles.overlay} />
 
       <div className={styles.container}>
         {/* LEFT — CATEGORIES */}
+           {/*} <div className={styles.overlay} />*/}
         <aside className={styles.sidebar}>
 
 
@@ -156,6 +156,11 @@ const CategorySection = () => {
               exit={{ opacity: 0, y: -40 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
             >
+               {/*<div className={styles.scrollRow}>
+                {filteredArtworks.map((art) => (
+                  <ArtCard key={art.id} art={art} />
+                ))}
+              </div>*/}
                <div className={styles.scrollRow}>
               <Marquee speed={30} pauseOnHover={true} reverseOnHover={true}>
                 {filteredArtworks.map((art) => (
@@ -182,7 +187,7 @@ const ArtCard = ({ art }) => {
       transition={{ duration: 0.3 }}
     >
       <div className={styles.imageWrap}>
-        <img src={art.image} alt={art.name} />
+        <img src={art.image} alt={art.name} onContextMenu={(e) => e.preventDefault()} onDragStart={(e) => e.preventDefault()} />
       </div>
 
 
