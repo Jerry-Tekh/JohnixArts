@@ -4,7 +4,7 @@ import styles from "./Header.module.css";
 
 import { FiMenu, FiX, FiShoppingCart } from "react-icons/fi";
 
-import LOGO from './../../assets/ShopImages/LOGO.png';
+import LOGO from './../../assets/ShopImages/LOGO1.png';
 
 
 const Header = () => {
