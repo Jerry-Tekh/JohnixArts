@@ -242,11 +242,11 @@
 @media (max-width: 500px) {
  
 .gallery {
-  padding: 1rem;
+  padding: 1rem 0.2rem;
 }
 
 .container {
-  padding: 5rem 1rem;
+  padding: 5rem 0.5rem;
 }
 .card {
 
