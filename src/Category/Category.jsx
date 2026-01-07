@@ -12,33 +12,9 @@ import styles from './Category.module.css';
 import HologramBtn from './../Components/HologramBtn/HologramBtn.jsx';
 
 
-import PAINT9 from './../assets/ShopImages/PAINT9.jpg';
-
-import ABS2 from './../assets/ShopImages/ABS2.jpg';
-import ABS3 from './../assets/ShopImages/ABS3.jpg';
-import POR6 from './../assets/ShopImages/POR6.jpg';
-import POR9 from './../assets/ShopImages/POR9.jpg';
-
-import NAT1 from './../assets/ShopImages/NAT1.jpg';
-import NAT2 from './../assets/ShopImages/NAT1.jpg';
-import NAT3 from './../assets/ShopImages/NAT1.jpg';
-import NAT4 from './../assets/ShopImages/NAT1.jpg';
-import NAT5 from './../assets/ShopImages/NAT1.jpg';
-import NAT6 from './../assets/ShopImages/NAT1.jpg';
-
-
-import POR5 from './../assets/ShopImages/POR5.jpg';
 
 
 
-
-
-
-
-
-
-
-// DEMO DATA (replace with yours later)
 //const categories = ["All", "Abstract", "Portrait", "Nature", "Modern"];
 const categories = ["All", "Abstract", "Portrait", "Nature"];
 
@@ -115,7 +91,7 @@ const CategorySection = () => {
       : artworks.filter((art) => art.category === activeCategory);
 
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id="category">
       {/* Overlay */}
       <div className={styles.bgImage} />
 

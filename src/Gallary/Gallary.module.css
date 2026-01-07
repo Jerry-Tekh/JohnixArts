@@ -142,7 +142,7 @@
   }
 
   .text {
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 1rem;
   
 }
 .text span{
@@ -177,57 +177,52 @@
 .animationContainer {
   color: #999;
   text-transform: uppercase;
-  font-size: 36px;
+  font-size: 1.2rem;
   font-weight: bold;
-  position: relative;
-  width: 100%;
-  display: block;
   font-family: 'Roboto', sans-serif;
-  margin-top: 2rem;
+  margin-top: 1rem;
   z-index: 20;
 }
 
 .flip {
-  height: 50px;
+  height: 48px;
   overflow: hidden;
+  position: relative;
+}
+
+.flip > div {
+  display: flex;
+  flex-direction: column;
+  animation: flipText 6s infinite ease-in-out;
+  ;
 }
 
 .flip > div > div {
+  height: 48px;
+  line-height: 48px;
+  padding: 0 12px;
+  white-space: nowrap;
   color: #fff;
-  padding: 4px 12px;
-  height: 45px;
-  margin-bottom: 45px;
-  display: inline-block;
+  display: flex;
+  align-items: center;
 }
 
-.flip div:first-child {
-  animation: show 5s linear infinite;
+/* Colors */
+.flip > div > div:nth-child(1) { background: #4ec7f3; }
+.flip > div > div:nth-child(2) { background: #42c58a; }
+.flip > div > div:nth-child(3) { background: #f115cc; }
+
+@keyframes flipText {
+  0%   { transform: translateY(0); }
+  30%  { transform: translateY(0); }
+
+  35%  { transform: translateY(-48px); }
+  65%  { transform: translateY(-48px); }
+
+  70%  { transform: translateY(-96px); }
+  100% { transform: translateY(-96px); }
 }
 
-.flip div div {
-  background: #42c58a;
-}
-
-.flip div:first-child div {
-  background: #4ec7f3;
-}
-
-.flip div:last-child div {
-  background: #DC143C;
-}
-
-
-
-@keyframes show {
-  0% { margin-top: -270px; }
-  5% { margin-top: -180px; }
-  33% { margin-top: -180px; }
-  38% { margin-top: -90px; }
-  66% { margin-top: -90px; }
-  71% { margin-top: 0px; }
-  99.99% { margin-top: 0px; }
-  100% { margin-top: -270px; }
-}
 
 .awesomeLink {
   color: #fff;

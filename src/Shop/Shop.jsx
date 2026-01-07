@@ -9,7 +9,7 @@ import bgImage from './../assets/ShopImages/NAT3.jpg';
 // Art images
 
 import art1 from './../assets/ShopImages/POR5.jpg';
-import art2 from './../assets/ShopImages/PEN3.jpg';
+import art2 from './../assets/ShopImages/POR7.jpg';
 import art3 from './../assets/ShopImages/POR4.jpg';
 import art4 from './../assets/ShopImages/POR2.jpg';
 

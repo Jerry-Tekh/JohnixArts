@@ -5,10 +5,10 @@ import styles from './Gallary.module.css';
 
 
 
-import img5 from "../assets/ShopImages/PEN1.jpg";
-import img2 from "../assets/ShopImages/PEN2.jpg";
+import img5 from "../assets/ShopImages/POR7.jpg";
+import img2 from "../assets/ShopImages/POR10.jpg";
 import img3 from "../assets/ShopImages/POR1.jpg";
-import img4 from "../assets/ShopImages/PEN3.jpg";
+import img4 from "../assets/ShopImages/POR11.jpg";
 import img1 from "../assets/ShopImages/NAT2.jpg";
 import img9 from "../assets/ShopImages/POR2.jpg";
 import img6 from "../assets/ShopImages/POR4.jpg";
@@ -74,26 +74,29 @@ const ArtGallerySection = () => {
                 texture, and meaning — created to live beyond the frame.
               </p>
 
-              <p className={styles.note}>
+             {/*} <p className={styles.note}>
                 Scroll to explore the collection
-              </p>
+              </p>*/}
 
             </motion.div>
 
-             {/* STICKY CTA — NO TRANSFORMS */}
-              <div className={styles.stickyCta}>
-                <div className={styles.animationContainer}>
-                  Need a
-                  <div className={styles.flip}>
-                    <div><div>Custom Portrait</div></div>
-                    <div><div>Meaningful Gift</div></div>
-                    <div><div>One-of-a-Kind Artwork</div></div>
+            {/* STICKY CTA — NO TRANSFORMS */}
+            <div className={styles.stickyCta}>
+              <div className={styles.animationContainer}>
+                Do you need
+                <div className={styles.flip}>
+                  <div>
+                    <div>Custom Portrait</div>
+                    <div>Meaningful Gift</div>
+                    <div>One-of-a-Kind Artwork</div>
                   </div>
-                  <a href="#contact" className={styles.awesomeLink}>
-                    Hire Me
-                  </a>
                 </div>
+
+                <a href="#contact" className={styles.awesomeLink}>
+                  Hire Me
+                </a>
               </div>
+            </div>
 
           </aside>
 

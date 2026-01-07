@@ -36,7 +36,7 @@ const Header = () => {
       </div>
 
       {/* Title */}
-      <h1 className={styles.title}>Johnix Arts</h1>
+      <h1 className={styles.title}>Johnix Art</h1>
 
       {/* Desktop Nav */}
       <nav className={styles.navDesktop}>

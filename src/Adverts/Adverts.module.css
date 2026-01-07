@@ -1,24 +1,30 @@
-.advert {
-  display: flex;
-  min-height: 100vh;
-  background: #ffffff;
-  background: #acacac;
-
+/* ===== WRAPPER ===== */
+.wrapper {
+  position: relative;
+  min-height: 100%;
   overflow: hidden;
-  padding: 4rem 1rem;
 }
 
-/* ===== LEFT VIDEO ===== */
+/* ===== ADVERT SLIDE ===== */
+.advert {
+  display: flex;
+  min-height: 100%;
+  background: #e4e4e4;
+  background: #dedede;
+}
+
+/* VIDEO */
 .videoWrap {
   width: 60%;
-  height: 95vh;
-  margin: auto;
+  height: 900px;
   position: relative;
 }
 
 .videoWrap video {
   width: 100%;
   height: 100%;
+  margin: 0 auto;
+
   object-fit: cover;
 }
 
@@ -32,7 +38,7 @@
   );
 }
 
-/* ===== RIGHT CONTENT ===== */
+/* CONTENT */
 .content {
   width: 40%;
   padding: 4rem;
@@ -42,11 +48,10 @@
 }
 
 .tag {
-  text-transform: uppercase;
+  font-size: 0.85rem;
   letter-spacing: 2px;
-  font-size: 0.9rem;
-  font-weight: 600;
   color: #7f56d9;
+  font-weight: 600;
   margin-bottom: 1rem;
 }
 
@@ -57,46 +62,36 @@
   margin-bottom: 1.5rem;
   color: #111;
 }
-
 .description {
   font-size: 1.2rem;
   line-height: 1.8;
   color: #444;
   max-width: 90%;
 }
-
 .features {
   margin: 1.8rem 0;
   list-style: none;
   padding: 0;
 }
-
 .features li {
   font-size: 0.95rem;
   color: #333;
   margin-bottom: 0.6rem;
 }
 
-/* ===== BUTTONS ===== */
 .actions {
   display: flex;
   gap: 1rem;
   margin-top: 1.5rem;
 }
 
+/* BUTTONS */
 .primaryBtn {
   background: #7f56d9;
-  color: white;
+  color: #fff;
   border: none;
   padding: 0.9rem 1.8rem;
-  font-size: 0.9rem;
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.3s ease;
-}
-
-.primaryBtn:hover {
-  background: #6842c2;
-  transform: translateY(-2px);
 }
 
 .secondaryBtn {
@@ -104,52 +99,196 @@
   border: 1px solid #7f56d9;
   color: #7f56d9;
   padding: 0.9rem 1.8rem;
-  font-size: 0.9rem;
   cursor: pointer;
-  transition: background 0.3s ease, color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
 }
 
-.secondaryBtn:hover {
+/* ===== ABOUT SLIDE ===== */
+.about {
+  min-height: 100%;
+  background: #ffffff;
+  position: relative;
+}
+
+.aboutInner {
+  display: flex;
+  height: 100%;
+  padding: 6rem 4rem;
+  gap: 4rem;
+}
+
+/* TEXT */
+.aboutText {
+  width: 50%;
+}
+
+.aboutLabel {
+  color: #7f56d9;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 1rem;
+}
+
+.aboutText h2 {
+  font-size: 2.6rem;
+  margin: 1rem 0;
+}
+
+.aboutText p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 1.5rem;
+}
+
+/* IMAGE */
+.aboutImage {
+  width: 50%;
+  height: 40%;
+}
+
+.aboutImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===== SOCIAL ICONS ===== */
+.socials {
+  display: flex;
+  flex-direction: column; /* VERTICAL */
+  gap: 1rem;
+  margin-top: 2.5rem;
+  align-items: center;
+}
+
+.socials a {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(127, 86, 217, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #7f56d9;
+  font-size: 1.2rem;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.socials a:hover {
   background: #7f56d9;
   color: #fff;
+  transform: translateX(6px);
+  box-shadow: 0 14px 35px rgba(127, 86, 217, 0.35);
+}
+
+.socials a:focus-visible {
+  outline: 2px solid #7f56d9;
+  outline-offset: 3px;
+}
+
+/* ===== BACK BUTTON ===== */
+.backBtnWrapper {
+  margin-top: 2rem;
+}
+
+.backBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 3rem;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border: 3px solid rgba(127, 86, 217, 0.35);
+  color: #7f56d9;
+  background: transparent;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.backBtn:hover {
+  background: #111;
+  background: #7f56d9;
+  color: #fff;
+  transform: translateX(-6px);
+}
+
+/* Improve swipe feel on mobile */
+.advert,
+.about {
+  touch-action: pan-y;
 }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
-  .advert {
+  .advert,
+  .aboutInner {
     flex-direction: column;
   }
 
   .videoWrap,
-  .content {
+  .content,
+  .aboutText,
+  .aboutImage {
     width: 100%;
   }
-
-  .videoWrap {
-    height: 60vh;
-  }
-
+.videoWrap{
+  height: 600px;
+  width: 99%;
+  margin: 0 auto;
+}
   .content {
-    padding: 3rem 2rem;
+    padding: 3rem 1rem;
   }
 
-  .content h2 {
-    font-size: 2.2rem;
+  .socials {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .socials a:hover {
+    transform: translateY(-4px);
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
+  .socials {
+    justify-content: center;
+    flex-wrap: wrap;
+    
+  }
+
+  .backBtnWrapper {
+    margin-top: 2.2rem;
+    display: flex;
+    justify-content: center;
+  }
+  .backBtn {
+    padding: 0.4rem 1.5rem;
+    font-size: 0.7rem;
+    
+    border: 1px solid rgba(127, 86, 217, 0.35);
+    border: none;
+  }
   .content h2 {
     font-size: 1.8rem;
   }
-
   .actions {
     flex-direction: column;
   }
-
   .primaryBtn,
   .secondaryBtn {
     width: 100%;
     text-align: center;
+    justify-content: center;
   }
+
+  .aboutInner {
+  padding: 6rem 1rem;
+ 
+}
+
 }

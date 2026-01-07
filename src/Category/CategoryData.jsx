@@ -19,8 +19,18 @@ import ABS12 from './../assets/ShopImages/ABS12.jpg';
 
 
 
+import POR1 from './../assets/ShopImages/POR1.jpg';
+import POR2 from './../assets/ShopImages/POR2.jpg';
+import POR3 from './../assets/ShopImages/POR3.jpg';
+import POR4 from './../assets/ShopImages/POR4.jpg';
+import POR5 from './../assets/ShopImages/POR5.jpg';
 import POR6 from './../assets/ShopImages/POR6.jpg';
+import POR7 from './../assets/ShopImages/POR7.jpg';
+import POR8 from './../assets/ShopImages/POR8.jpg';
 import POR9 from './../assets/ShopImages/POR9.jpg';
+import POR10 from './../assets/ShopImages/POR10.jpg';
+import POR11 from './../assets/ShopImages/POR11.jpg';
+
 
 import NAT1 from './../assets/ShopImages/NAT1.jpg';
 import NAT2 from './../assets/ShopImages/NAT2.jpg';
@@ -30,7 +40,6 @@ import NAT5 from './../assets/ShopImages/NAT5.jpg';
 import NAT6 from './../assets/ShopImages/NAT6.jpg';
 
 
-import POR5 from './../assets/ShopImages/POR5.jpg';
 
 
 
@@ -103,6 +112,16 @@ import POR5 from './../assets/ShopImages/POR5.jpg';
   {
     id: 7,
     name: "Silent Face",
+    category: "Portrait",
+    image: POR4,
+    sizes: [
+      { label: "Medium", value: "M", price: 18000 },
+      { label: "Large", value: "L", price: 23000 },
+    ],
+  },
+  {
+    id: 8,
+    name: "Silent Face",
     category: "Abstract",
     image: ABS4,
     sizes: [
@@ -111,7 +130,7 @@ import POR5 from './../assets/ShopImages/POR5.jpg';
     ],
   },
   {
-    id: 8,
+    id: 9,
     name: "Green Escape",
     category: "Nature",
     image: NAT2,
@@ -121,7 +140,7 @@ import POR5 from './../assets/ShopImages/POR5.jpg';
     ],
   },
   {
-    id: 9,
+    id: 10,
     name: "Green Escape",
     category: "Portrait",
     image: POR9,
@@ -131,7 +150,7 @@ import POR5 from './../assets/ShopImages/POR5.jpg';
     ],
   },
   {
-    id: 10,
+    id: 11,
     name: "Silent Face",
     category: "Abstract",
     image: ABS5,
@@ -141,7 +160,17 @@ import POR5 from './../assets/ShopImages/POR5.jpg';
     ],
   },
   {
-    id: 11,
+    id: 12,
+    name: "Silent Face",
+    category: "Portrait",
+    image: POR7,
+    sizes: [
+      { label: "Medium", value: "M", price: 18000 },
+      { label: "Large", value: "L", price: 23000 },
+    ],
+  },
+  {
+    id: 13,
     name: "Green Escape",
     category: "Nature",
     image: NAT3,
@@ -151,7 +180,17 @@ import POR5 from './../assets/ShopImages/POR5.jpg';
     ],
   },
   {
-    id: 12,
+    id: 14,
+    name: "Silent Face",
+    category: "Portrait",
+    image: POR5,
+    sizes: [
+      { label: "Medium", value: "M", price: 18000 },
+      { label: "Large", value: "L", price: 23000 },
+    ],
+  },
+  {
+    id: 15,
     name: "Silent Face",
     category: "Abstract",
     image: ABS6,
@@ -161,50 +200,10 @@ import POR5 from './../assets/ShopImages/POR5.jpg';
     ],
   },
   {
-    id: 13,
-    name: "Silent Face",
-    category: "Abstract",
-    image: ABS7,
-    sizes: [
-      { label: "Medium", value: "M", price: 18000 },
-      { label: "Large", value: "L", price: 23000 },
-    ],
-  },
-  {
-    id: 14,
-    name: "Green Escape",
-    category: "Nature",
-    image: NAT4,
-    sizes: [
-      { label: "Small", value: "S", price: 12000 },
-      { label: "Medium", value: "M", price: 17000 },
-    ],
-  },
-  {
-    id: 15,
-    name: "Silent Face",
-    category: "Abstract",
-    image: ABS8,
-    sizes: [
-      { label: "Medium", value: "M", price: 18000 },
-      { label: "Large", value: "L", price: 23000 },
-    ],
-  },
-  {
     id: 16,
-    name: "Green Escape",
-    category: "Nature",
-    image: NAT5,
-    sizes: [
-      { label: "Small", value: "S", price: 12000 },
-      { label: "Medium", value: "M", price: 17000 },
-    ],
-  },
-  {
-    id: 17,
     name: "Silent Face",
-    category: "Abstract",
-    image: ABS9,
+    category: "Portrait",
+    image: POR8,
     sizes: [
       { label: "Medium", value: "M", price: 18000 },
       { label: "Large", value: "L", price: 23000 },
@@ -214,7 +213,7 @@ import POR5 from './../assets/ShopImages/POR5.jpg';
     id: 18,
     name: "Silent Face",
     category: "Abstract",
-    image: ABS10,
+    image: ABS7,
     sizes: [
       { label: "Medium", value: "M", price: 18000 },
       { label: "Large", value: "L", price: 23000 },
@@ -224,7 +223,7 @@ import POR5 from './../assets/ShopImages/POR5.jpg';
     id: 19,
     name: "Green Escape",
     category: "Nature",
-    image: NAT6,
+    image: NAT4,
     sizes: [
       { label: "Small", value: "S", price: 12000 },
       { label: "Medium", value: "M", price: 17000 },
@@ -232,6 +231,86 @@ import POR5 from './../assets/ShopImages/POR5.jpg';
   },
   {
     id: 20,
+    name: "Silent Face",
+    category: "Portrait",
+    image: POR10,
+    sizes: [
+      { label: "Medium", value: "M", price: 18000 },
+      { label: "Large", value: "L", price: 23000 },
+    ],
+  },
+  {
+    id: 21,
+    name: "Silent Face",
+    category: "Abstract",
+    image: ABS8,
+    sizes: [
+      { label: "Medium", value: "M", price: 18000 },
+      { label: "Large", value: "L", price: 23000 },
+    ],
+  },
+  {
+    id: 22,
+    name: "Green Escape",
+    category: "Nature",
+    image: NAT5,
+    sizes: [
+      { label: "Small", value: "S", price: 12000 },
+      { label: "Medium", value: "M", price: 17000 },
+    ],
+  },
+  {
+    id: 23,
+    name: "Silent Face",
+    category: "Portrait",
+    image: POR11,
+    sizes: [
+      { label: "Medium", value: "M", price: 18000 },
+      { label: "Large", value: "L", price: 23000 },
+    ],
+  },
+  {
+    id: 24,
+    name: "Silent Face",
+    category: "Abstract",
+    image: ABS9,
+    sizes: [
+      { label: "Medium", value: "M", price: 18000 },
+      { label: "Large", value: "L", price: 23000 },
+    ],
+  },
+  {
+    id: 25,
+    name: "Silent Face",
+    category: "Abstract",
+    image: ABS10,
+    sizes: [
+      { label: "Medium", value: "M", price: 18000 },
+      { label: "Large", value: "L", price: 23000 },
+    ],
+  },
+  {
+    id: 26,
+    name: "Silent Face",
+    category: "Portrait",
+    image: POR3,
+    sizes: [
+      { label: "Medium", value: "M", price: 18000 },
+      { label: "Large", value: "L", price: 23000 },
+    ],
+  },
+  {
+    id: 27,
+    name: "Green Escape",
+    category: "Nature",
+    image: NAT6,
+    sizes: [
+      { label: "Small", value: "S", price: 12000 },
+      { label: "Medium", value: "M", price: 17000 },
+    ],
+  },
+  {
+    id: 28,
     name: "Silent Face",
     category: "Abstract",
     image: ABS11,
@@ -241,7 +320,17 @@ import POR5 from './../assets/ShopImages/POR5.jpg';
     ],
   },
   {
-    id: 21,
+    id: 29,
+    name: "Silent Face",
+    category: "Portrait",
+    image: POR1,
+    sizes: [
+      { label: "Medium", value: "M", price: 18000 },
+      { label: "Large", value: "L", price: 23000 },
+    ],
+  },
+  {
+    id: 30,
     name: "Silent Face",
     category: "Abstract",
     image: ABS12,
