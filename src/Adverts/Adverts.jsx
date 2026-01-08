@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiArrowRight, FiArrowLeft, FiPhoneCall , } from "react-icons/fi";
 import { FaWhatsapp } from 'react-icons/fa';
@@ -23,9 +23,30 @@ const swipePower = (offset, velocity) => {
 
 const ArtistAdvert = () => {
   const [showAbout, setShowAbout] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const openAboutFromHash = () => {
+      const h = window.location.hash;
+      if (h === "#adverts-about" || h === "#ourstory") {
+        if (sectionRef.current) {
+          sectionRef.current.scrollIntoView({ behavior: "smooth" });
+        }
+        // Delay to allow scroll animation to start
+        setTimeout(() => setShowAbout(true), 600);
+      }
+    };
+
+    // Check on mount
+    openAboutFromHash();
+
+    // Listen for future hash changes
+    window.addEventListener("hashchange", openAboutFromHash);
+    return () => window.removeEventListener("hashchange", openAboutFromHash);
+  }, []);
 
   return (
-    <section className={styles.wrapper}>
+    <section className={styles.wrapper} ref={sectionRef} id="adverts">
       <AnimatePresence mode="wait">
         {!showAbout ? (
           /* ================= ADVERT SLIDE ================= */

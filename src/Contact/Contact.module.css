@@ -1,6 +1,6 @@
 .contactSection {
   position: relative;
-  min-height: 100vh;
+  min-height: 100%;
   background: url("../assets/ShopImages/NAT2.jpg") center / cover no-repeat;
   display: flex;
   align-items: center;
@@ -140,6 +140,11 @@
  
   padding: 5rem 2rem;
 
+}
+.container {
+ 
+  padding: 6rem 1rem;
+ 
 }
 
 }

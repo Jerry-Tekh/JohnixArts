@@ -38,6 +38,17 @@ function App() {
           <Footer />
         </>
       } />
+      <Route path="/originals" element={
+        <>
+          <Header />
+          <Home />
+          <CategorySection/>
+          <Banner/>
+          <ArtistAdvert/>
+          <ArtGallerySection/>
+          <Footer />
+        </>
+      } />
       <Route path="/shop" element={
         <>
           <Header />

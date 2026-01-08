@@ -13,10 +13,7 @@ import {
   FiClock,
 } from "react-icons/fi";
 
-
 const categories = ["All", "Abstract", "Portrait", "Nature"];
-
-
 
 const PRICE_DATA = [
   { size: "8 × 10 in", pencil: "30,000", pen: "35,000", paint: "40,000" },
@@ -27,8 +24,6 @@ const PRICE_DATA = [
   { size: "20 × 36 in", pencil: "80,000", pen: "85,000", paint: "90,000" },
   { size: "24 × 40 in", pencil: "90,000", pen: "95,000", paint: "100,000" },
 ];
-
-
 
 const USE_CASES = [
   {
@@ -73,8 +68,6 @@ const USE_CASES = [
   },
 ];
 
-
-
 const CategorySection = () => {
   const [activeCategory, setActiveCategory] = useState("All");
   const [showPriceSection, setShowPriceSection] = useState(false);
@@ -105,8 +98,9 @@ const CategorySection = () => {
                   {categories.map((cat) => (
                     <button
                       key={cat}
-                      className={`${styles.categoryBtn} ${activeCategory === cat ? styles.active : ""
-                        }`}
+                      className={`${styles.categoryBtn} ${
+                        activeCategory === cat ? styles.active : ""
+                      }`}
                       onClick={() => setActiveCategory(cat)}
                     >
                       {cat}
@@ -121,7 +115,6 @@ const CategorySection = () => {
                   View Price Guide
                   <FiArrowRight />
                 </button>
-
               </motion.div>
             ) : (
               <motion.div
@@ -131,14 +124,18 @@ const CategorySection = () => {
                 animate={{ x: 0, opacity: 1 }}
                 exit={{ x: -40, opacity: 0 }}
               >
-
-
-                <h3 className={styles.priceTitle}>Price Guide <span>                 <button
-                  className={styles.backBtn}
-                  onClick={() => setShowPriceSection(false)}
-                >
-                  <FiArrowLeft />
-                </button></span></h3>
+                <h3 className={styles.priceTitle}>
+                  Price Guide{" "}
+                  <span>
+                    {" "}
+                    <button
+                      className={styles.backBtn}
+                      onClick={() => setShowPriceSection(false)}
+                    >
+                      <FiArrowLeft />
+                    </button>
+                  </span>
+                </h3>
 
                 <div className={styles.priceGrid}>
                   {PRICE_DATA.map((item) => (
@@ -190,32 +187,31 @@ const CategorySection = () => {
               exit={{ x: -80, opacity: 0 }}
               transition={{ duration: 0.6, ease: "easeInOut" }}
             >
-              <h3 className={styles.useCaseTitle}>
-                Why You’re Paying
-              </h3>
+              <h3 className={styles.useCaseTitle}>Why You’re Paying</h3>
 
-              {USE_CASES.map((section) => (
-                <div key={section.title} className={styles.useCaseBlock}>
-                  <div className={styles.useCaseContent}>
+              <div className={styles.useCaseGrid}>
+                {USE_CASES.map((section) => (
+                  <div key={section.title} className={styles.useCaseBlock}>
+                    <div className={styles.useCaseContent}>
+                      <div className={styles.useCaseHeader}>
+                        <span className={styles.useCaseIcon}>
+                          {section.icon}
+                        </span>
+                        <h4>{section.title}</h4>
+                      </div>
 
-                    <div className={styles.useCaseHeader}>
-                      <span className={styles.useCaseIcon}>{section.icon}</span>
-                      <h4>{section.title}</h4>
+                      <ul>
+                        {section.points.map((point) => (
+                          <li key={point}>{point}</li>
+                        ))}
+                      </ul>
                     </div>
-
-                    <ul>
-                      {section.points.map((point) => (
-                        <li key={point}>{point}</li>
-                      ))}
-                    </ul>
                   </div>
-                </div>
-              ))}
-
+                ))}
+              </div>
             </motion.div>
           )}
         </AnimatePresence>
-
       </div>
     </section>
   );
@@ -244,6 +240,5 @@ const ArtCard = ({ art }) => {
     </motion.div>
   );
 };
-
 
 export default CategorySection;

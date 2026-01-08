@@ -1,17 +1,25 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate, useLocation, Link } from "react-router-dom";
+
 import styles from "./Header.module.css";
-import { FiMenu, FiX } from "react-icons/fi";
-import LOGO from "../../assets/ShopImages/LOGO1.png";
+
+import { FiMenu, FiX, FiShoppingCart } from "react-icons/fi";
+
+import LOGO from "./../../assets/ShopImages/LOGO1.png";
 
 const Header = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
+  const [menuOpen, setMenuOpen] = useState(false);
+  const cartCount = 3;
+
+  const location = useLocation();
+  const isOriginalsActive =
+    location.pathname === "/" && location.hash === "#Original";
 
   return (
     <header className={styles.header}>
-      {/* ===== HEADER TOP ===== */}
-      <div className={styles.headerTop}>
+      {/* Top bar */}
+      <div className={styles.topBar}>
         <button
           className={styles.menuBtn}
           onClick={() => setMenuOpen(true)}
@@ -21,67 +29,162 @@ const Header = () => {
         </button>
 
         <div className={styles.logoWrapper}>
-          <img src={LOGO} alt="Johnix Arts Logo" />
+          <img src={LOGO} alt="Johnix Arts Logo" className={styles.logo} />
+          {/*<FiShoppingCart size={26} />
+          <span className={styles.cartCount}>{cartCount}</span>*/}
         </div>
 
         <Link to="/contact" className={styles.contactBtn}>
-          Contact
+          Contact Me
         </Link>
       </div>
 
-      {/* ===== HEADER TITLE ===== */}
-      <div className={styles.headerTitle}>
-        <h1>Johnix Art</h1>
+      {/* Title */}
+      <div>
+        <h1 className={styles.title}>Johnix Art</h1>
       </div>
 
-      {/* ===== DESKTOP NAV ===== */}
-      <nav className={styles.headerNav}>
-        <Link to="/">Home</Link>
-        <Link to="/shop">Shop</Link>
-        <span
+      {/* Desktop Nav */}
+      <nav className={styles.navDesktop}>
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive && !location.hash ? styles.active : ""
+          }
+        >
+          Home
+        </NavLink>
+
+        {/*<span
+          className={isOriginalsActive ? styles.active : ""}
           onClick={() => {
-            if (window.location.pathname !== "/") navigate("/");
+            if (location.pathname !== "/") navigate("/");
             window.location.hash = "#Original";
           }}
         >
           Originals
-        </span>
-        <Link to="/contact">Contact</Link>
-        <a href="#">Our Story</a>
+        </span>*/}
+
+        <NavLink
+          to="/originals"
+          className={({ isActive }) => (isActive ? styles.active : "")}
+          onClick={(e) => {
+            // Close mobile menu then navigate + scroll to gallery on Home
+            setMenuOpen(false);
+            if (location.pathname !== "/") {
+              navigate({ pathname: "/", hash: "#Original" });
+            } else {
+              // already on home: set hash to trigger scroll
+              window.location.hash = "#Original";
+            }
+            // prevent default NavLink navigation since we programmatically navigate
+            e.preventDefault();
+          }}
+        >
+          Originals
+        </NavLink>
+
+        <NavLink
+          to="/contact"
+          className={({ isActive }) => (isActive ? styles.active : "")}
+        >
+          Contact
+        </NavLink>
+
+        <NavLink
+          to="/"
+          className={({ isActive }) => (isActive && !location.hash ? styles.active : "")}
+          onClick={(e) => {
+            if (location.pathname !== "/") {
+              navigate({ pathname: "/", hash: "#adverts-about" });
+            } else {
+              window.location.hash = "#adverts-about";
+            }
+            e.preventDefault();
+          }}
+        >
+          Our Story
+        </NavLink>
+
+        
       </nav>
 
-      {/* ===== MOBILE NAV OVERLAY ===== */}
-      <aside
-        className={`${styles.mobileNav} ${menuOpen ? styles.open : ""}`}
-        aria-hidden={!menuOpen}
-      >
+      {/* Mobile Nav Overlay */}
+      <div className={`${styles.mobileNav} ${menuOpen ? styles.open : ""}`}>
         <button
           className={styles.closeBtn}
           onClick={() => setMenuOpen(false)}
+          aria-label="Close menu"
         >
           <FiX size={28} />
         </button>
 
-        <nav className={styles.mobileLinks}>
-          {["Home", "Shop", "Originals", "Contact"].map((item, i) => (
-            <span
-              key={item}
-              style={{ animationDelay: `${i * 0.1 + 0.2}s` }}
-              onClick={() => {
-                if (item === "Originals") {
-                  if (window.location.pathname !== "/") navigate("/");
-                  window.location.hash = "#Original";
-                } else {
-                  navigate(item === "Home" ? "/" : `/${item.toLowerCase()}`);
-                }
-                setMenuOpen(false);
-              }}
-            >
-              {item}
-            </span>
-          ))}
+        <nav className={styles.mobileNavLinks}>
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive && !location.hash ? styles.active : ""
+            }
+            onClick={() => setMenuOpen(false)}
+          >
+            Home
+          </NavLink>
+
+          {/*<span
+            className={isOriginalsActive ? styles.active : ""}
+            onClick={() => {
+              if (location.pathname !== "/") navigate("/");
+              window.location.hash = "#Original";
+              setMenuOpen(false);
+            }}
+          >
+            Originals
+          </span>*/}
+
+          <NavLink
+            to="/originals"
+            className={({ isActive }) => (isActive ? styles.active : "")}
+            onClick={(e) => {
+              // Close mobile menu then navigate + scroll to gallery on Home
+              setMenuOpen(false);
+              if (location.pathname !== "/") {
+                navigate({ pathname: "/", hash: "#Original" });
+              } else {
+                // already on home: set hash to trigger scroll
+                window.location.hash = "#Original";
+              }
+              // prevent default NavLink navigation since we programmatically navigate
+              e.preventDefault();
+            }}
+          >
+            Originals
+          </NavLink>
+
+          <NavLink
+            to="/contact"
+            className={({ isActive }) => (isActive ? styles.active : "")}
+            onClick={() => setMenuOpen(false)}
+          >
+            Contact
+          </NavLink>
+
+          <NavLink
+            to="/"
+            className={({ isActive }) => (isActive && !location.hash ? styles.active : "")}
+            onClick={(e) => {
+              setMenuOpen(false);
+              if (location.pathname !== "/") {
+                navigate({ pathname: "/", hash: "#adverts-about" });
+              } else {
+                window.location.hash = "#adverts-about";
+              }
+              e.preventDefault();
+            }}
+          >
+            Our Story
+          </NavLink>
         </nav>
-      </aside>
+      </div>
     </header>
   );
 };
