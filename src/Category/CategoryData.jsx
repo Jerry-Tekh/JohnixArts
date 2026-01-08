@@ -30,7 +30,7 @@ import POR8 from './../assets/ShopImages/POR8.jpg';
 import POR9 from './../assets/ShopImages/POR9.jpg';
 import POR10 from './../assets/ShopImages/POR10.jpg';
 import POR11 from './../assets/ShopImages/POR11.jpg';
-
+import POR12 from './../assets/ShopImages/POR12.jpeg';
 
 import NAT1 from './../assets/ShopImages/NAT1.jpg';
 import NAT2 from './../assets/ShopImages/NAT2.jpg';
@@ -163,7 +163,7 @@ import NAT6 from './../assets/ShopImages/NAT6.jpg';
     id: 12,
     name: "Silent Face",
     category: "Portrait",
-    image: POR7,
+    image: POR12,
     sizes: [
       { label: "Medium", value: "M", price: 18000 },
       { label: "Large", value: "L", price: 23000 },
@@ -293,7 +293,7 @@ import NAT6 from './../assets/ShopImages/NAT6.jpg';
     id: 26,
     name: "Silent Face",
     category: "Portrait",
-    image: POR3,
+    image: POR7,
     sizes: [
       { label: "Medium", value: "M", price: 18000 },
       { label: "Large", value: "L", price: 23000 },
@@ -301,6 +301,16 @@ import NAT6 from './../assets/ShopImages/NAT6.jpg';
   },
   {
     id: 27,
+    name: "Silent Face",
+    category: "Portrait",
+    image: POR3,
+    sizes: [
+      { label: "Medium", value: "M", price: 18000 },
+      { label: "Large", value: "L", price: 23000 },
+    ],
+  },
+  {
+    id: 28,
     name: "Green Escape",
     category: "Nature",
     image: NAT6,
@@ -310,7 +320,7 @@ import NAT6 from './../assets/ShopImages/NAT6.jpg';
     ],
   },
   {
-    id: 28,
+    id: 29,
     name: "Silent Face",
     category: "Abstract",
     image: ABS11,
@@ -320,7 +330,7 @@ import NAT6 from './../assets/ShopImages/NAT6.jpg';
     ],
   },
   {
-    id: 29,
+    id: 30,
     name: "Silent Face",
     category: "Portrait",
     image: POR1,
@@ -330,7 +340,7 @@ import NAT6 from './../assets/ShopImages/NAT6.jpg';
     ],
   },
   {
-    id: 30,
+    id: 31,
     name: "Silent Face",
     category: "Abstract",
     image: ABS12,

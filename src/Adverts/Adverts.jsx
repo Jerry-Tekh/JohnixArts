@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FiArrowRight, FiArrowLeft, FiPhoneCall } from "react-icons/fi";
+import { FiArrowRight, FiArrowLeft, FiPhoneCall , } from "react-icons/fi";
+import { FaWhatsapp } from 'react-icons/fa';
 import { FiFacebook, FiInstagram, FiLinkedin, FiTwitter } from "react-icons/fi";
 import video from "../assets/Video/Advert.mp4";
 import artistImg from "../assets/ShopImages/ARTISTPIC.png";
@@ -64,7 +65,7 @@ const ArtistAdvert = () => {
               </span>
 
               <h2>
-                Art That Speaks <br /> Beyond Canvas
+                Art That Speaks <br /> Beyond Paper And Canvas
               </h2>
 
               <p className={styles.description}> Each piece is thoughtfully created to evoke emotion, tell a story, and elevate the space it lives in. From original artworks to fine art prints, every detail is crafted with intention and passion. 
@@ -176,6 +177,11 @@ const ArtistAdvert = () => {
                       icon: <FiLinkedin />,
                       link: "https://linktr.ee/johnike",
                       label: "LinkedIn",
+                    },
+                    {
+                      icon: <FaWhatsapp />,
+                      link: "https://wa.me/qr/WHODGSKQHM6VK1",
+                      label: "Whatsapp",
                     },
                   ].map((item, index) => (
                     <motion.a

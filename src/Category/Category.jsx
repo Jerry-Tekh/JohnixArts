@@ -1,89 +1,83 @@
 import React, { useState } from "react";
-import Select from "react-select";
 import { motion, AnimatePresence } from "framer-motion";
-import { FiPlus, FiMinus } from "react-icons/fi";
-import Marquee from './../Components/Marquee/Marquee.jsx';
-import {artworks} from './CategoryData.jsx';
+import styles from "./Category.module.css";
+import { artworks } from "./CategoryData.jsx";
+import HologramBtn from "../Components/HologramBtn/HologramBtn.jsx";
+import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
+import {
+  FiCheckCircle,
+  FiHome,
+  FiBriefcase,
+  FiGift,
+  FiImage,
+  FiClock,
+} from "react-icons/fi";
 
 
-
-import styles from './Category.module.css';
-
-import HologramBtn from './../Components/HologramBtn/HologramBtn.jsx';
-
-
-
-
-
-//const categories = ["All", "Abstract", "Portrait", "Nature", "Modern"];
 const categories = ["All", "Abstract", "Portrait", "Nature"];
 
-/*const artworks = [
+
+
+const PRICE_DATA = [
+  { size: "8 × 10 in", pencil: "30,000", pen: "35,000", paint: "40,000" },
+  { size: "10 × 12 in", pencil: "40,000", pen: "45,000", paint: "50,000" },
+  { size: "12 × 15 in", pencil: "50,000", pen: "55,000", paint: "60,000" },
+  { size: "16 × 20 in", pencil: "60,000", pen: "65,000", paint: "70,000" },
+  { size: "20 × 24 in", pencil: "70,000", pen: "75,000", paint: "80,000" },
+  { size: "20 × 36 in", pencil: "80,000", pen: "85,000", paint: "90,000" },
+  { size: "24 × 40 in", pencil: "90,000", pen: "95,000", paint: "100,000" },
+];
+
+
+
+const USE_CASES = [
   {
-    id: 1,
-    name: "Golden Flow",
-    category: "Abstract",
-    image: ABS2,
-    sizes: [
-      { label: "Small", value: "S", price: 10000 },
-      { label: "Medium", value: "M", price: 15000 },
-      { label: "Large", value: "L", price: 20000 },
+    title: "What You Get",
+    icon: <FiCheckCircle />,
+    points: [
+      "100% hand-drawn original artwork",
+      "High-quality archival materials",
+      "Signed by the artist",
+      "Guidance on framing & display",
     ],
   },
   {
-    id: 2,
-    name: "Silent Face",
-    category: "Portrait",
-    image: POR6,
-    sizes: [
-      { label: "Medium", value: "M", price: 18000 },
-      { label: "Large", value: "L", price: 23000 },
+    title: "Perfect For",
+    icon: <FiHome />,
+    points: [
+      "Home & interior décor",
+      "Office & studio spaces",
+      "Brand identity & branding visuals",
+      "Thoughtful premium gifts",
     ],
   },
   {
-    id: 3,
-    name: "Green Escape",
-    category: "Nature",
-    image: NAT1,
-    sizes: [
-      { label: "Small", value: "S", price: 12000 },
-      { label: "Medium", value: "M", price: 17000 },
+    title: "Size & Medium Impact",
+    icon: <FiImage />,
+    points: [
+      "Larger sizes command more presence",
+      "Paint delivers depth & longevity",
+      "Pen gives sharp contrast",
+      "Pencil offers soft realism",
     ],
   },
   {
-    id: 4,
-    name: "Green Escape",
-    category: "Abstract",
-    image: ABS3,
-    sizes: [
-      { label: "Small", value: "S", price: 12000 },
-      { label: "Medium", value: "M", price: 17000 },
+    title: "Timeline",
+    icon: <FiClock />,
+    points: [
+      "Small sizes: 5–7 days",
+      "Medium sizes: 7–10 days",
+      "Large sizes: 10–14 days",
+      "Rush delivery available",
     ],
   },
-  {
-    id: 5,
-    name: "Green Escape",
-    category: "Portrait",
-    image: POR5,
-    sizes: [
-      { label: "Small", value: "S", price: 12000 },
-      { label: "Medium", value: "M", price: 17000 },
-    ],
-  },
-  {
-    id: 6,
-    name: "Green Escape",
-    category: "Portrait",
-    image: POR9,
-    sizes: [
-      { label: "Small", value: "S", price: 12000 },
-      { label: "Medium", value: "M", price: 17000 },
-    ],
-  },
-];*/
+];
+
+
 
 const CategorySection = () => {
   const [activeCategory, setActiveCategory] = useState("All");
+  const [showPriceSection, setShowPriceSection] = useState(false);
 
   const filteredArtworks =
     activeCategory === "All"
@@ -91,85 +85,165 @@ const CategorySection = () => {
       : artworks.filter((art) => art.category === activeCategory);
 
   return (
-    <section className={styles.section} id="category">
-      {/* Overlay */}
+    <section className={styles.section}>
       <div className={styles.bgImage} />
 
       <div className={styles.container}>
-        {/* LEFT — CATEGORIES */}
-           {/*} <div className={styles.overlay} />*/}
+        {/* LEFT PANEL */}
         <aside className={styles.sidebar}>
-
-
-          <h3 className={styles.title}>Categories</h3>
-
-          <div className={styles.categoryList}>
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                className={`${styles.categoryBtn} ${activeCategory === cat ? styles.active : ""
-                  }`}
-                onClick={() => setActiveCategory(cat)}
+          <AnimatePresence mode="wait">
+            {!showPriceSection ? (
+              <motion.div
+                key="categories"
+                initial={{ x: -40, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: -40, opacity: 0 }}
               >
-                {cat}
-              </button>
-            ))}
-          </div>
+                <h3 className={styles.title}>Categories</h3>
+
+                <div className={styles.categoryList}>
+                  {categories.map((cat) => (
+                    <button
+                      key={cat}
+                      className={`${styles.categoryBtn} ${activeCategory === cat ? styles.active : ""
+                        }`}
+                      onClick={() => setActiveCategory(cat)}
+                    >
+                      {cat}
+                    </button>
+                  ))}
+                </div>
+
+                <button
+                  className={styles.viewPriceBtn}
+                  onClick={() => setShowPriceSection(true)}
+                >
+                  View Price Guide
+                  <FiArrowRight />
+                </button>
+
+              </motion.div>
+            ) : (
+              <motion.div
+                key="prices"
+                className={styles.priceSection}
+                initial={{ x: -40, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: -40, opacity: 0 }}
+              >
 
 
-          {/* HOLOGRAM BUTTON */}
-        <HologramBtn/>
+                <h3 className={styles.priceTitle}>Price Guide <span>                 <button
+                  className={styles.backBtn}
+                  onClick={() => setShowPriceSection(false)}
+                >
+                  <FiArrowLeft />
+                </button></span></h3>
 
+                <div className={styles.priceGrid}>
+                  {PRICE_DATA.map((item) => (
+                    <div key={item.size} className={styles.priceCard}>
+                      <strong>{item.size}</strong>
+                      <ul>
+                        <li>Pencil — ₦{item.pencil}</li>
+                        <li>Pen — ₦{item.pen}</li>
+                        <li>Paint — ₦{item.paint}</li>
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+
+                <button
+                  className={`${styles.backBtn} ${styles.backBtnBottom}`}
+                  onClick={() => setShowPriceSection(false)}
+                >
+                  <FiArrowLeft />
+                </button>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </aside>
 
-        {/* RIGHT — ART GRID */}
-        <div className={styles.gallery}>
-          <AnimatePresence mode="wait">
+        {/* RIGHT GALLERY */}
+        <AnimatePresence mode="wait">
+          {!showPriceSection ? (
             <motion.div
-              key={activeCategory}
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -40 }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
+              key="gallery"
+              className={styles.gallery}
+              initial={{ x: 60, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: 60, opacity: 0 }}
+              transition={{ duration: 0.6, ease: "easeInOut" }}
             >
-               {/*<div className={styles.scrollRow}>
+              <div className={styles.scrollRow}>
                 {filteredArtworks.map((art) => (
                   <ArtCard key={art.id} art={art} />
                 ))}
-              </div>*/}
-               <div className={styles.scrollRow}>
-              <Marquee speed={30} pauseOnHover={true} reverseOnHover={true}>
-                {filteredArtworks.map((art) => (
-                  <ArtCard key={art.id} art={art} />
-                ))}
-              </Marquee>
               </div>
             </motion.div>
-          </AnimatePresence>
-        </div>
+          ) : (
+            <motion.div
+              key="useCases"
+              className={styles.useCases}
+              initial={{ x: -80, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: -80, opacity: 0 }}
+              transition={{ duration: 0.6, ease: "easeInOut" }}
+            >
+              <h3 className={styles.useCaseTitle}>
+                Why You’re Paying
+              </h3>
+
+              {USE_CASES.map((section) => (
+                <div key={section.title} className={styles.useCaseBlock}>
+                  <div className={styles.useCaseContent}>
+
+                    <div className={styles.useCaseHeader}>
+                      <span className={styles.useCaseIcon}>{section.icon}</span>
+                      <h4>{section.title}</h4>
+                    </div>
+
+                    <ul>
+                      {section.points.map((point) => (
+                        <li key={point}>{point}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              ))}
+
+            </motion.div>
+          )}
+        </AnimatePresence>
+
       </div>
     </section>
   );
 };
 
 const ArtCard = ({ art }) => {
-  const [selectedSize, setSelectedSize] = useState(art.sizes[0]);
-  const [qty, setQty] = useState(1);
-
   return (
     <motion.div
       className={styles.card}
+      initial={{ opacity: 0, scale: 0.96 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{
+        duration: 0.8,
+        ease: "easeOut",
+      }}
       whileHover={{ scale: 1.04 }}
-      transition={{ duration: 0.3 }}
     >
-      <div className={styles.imageWrap}>
-        <img src={art.image} alt={art.name} onContextMenu={(e) => e.preventDefault()} onDragStart={(e) => e.preventDefault()} />
-      </div>
-
-
-
+      <motion.div
+        className={styles.imageWrap}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.15, duration: 0.6 }}
+      >
+        <img src={art.image} alt={art.name} />
+      </motion.div>
     </motion.div>
   );
 };
+
 
 export default CategorySection;

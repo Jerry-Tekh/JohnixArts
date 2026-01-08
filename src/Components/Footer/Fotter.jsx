@@ -3,6 +3,7 @@ import styles from "./Footer.module.css";
 import { FiFacebook, FiInstagram, FiLinkedin, FiTwitter } from "react-icons/fi";
 import LOGO from './../../assets/ShopImages/LOGO.png';
 import { Link, useNavigate } from 'react-router-dom';
+import { FaWhatsapp } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -43,6 +44,9 @@ const Footer = () => {
           </a>
           <a href="https://linktr.ee/johnike" aria-label="Linkedin">
             <FiLinkedin />
+          </a>
+          <a href="https://linktr.ee/johnike" aria-label="Linkedin">
+            <FaWhatsapp />
           </a>
         </div>
 

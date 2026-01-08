@@ -6,15 +6,20 @@ import styles from './Gallary.module.css';
 
 
 import img5 from "../assets/ShopImages/POR7.jpg";
+import img8 from "../assets/ShopImages/POR6.jpg";
 import img2 from "../assets/ShopImages/POR10.jpg";
 import img3 from "../assets/ShopImages/POR1.jpg";
 import img4 from "../assets/ShopImages/POR11.jpg";
 import img1 from "../assets/ShopImages/NAT2.jpg";
 import img9 from "../assets/ShopImages/POR2.jpg";
 import img6 from "../assets/ShopImages/POR4.jpg";
-import img8 from "../assets/ShopImages/ABS1.jpg";
+import img7 from './../assets/ShopImages/POR12.jpeg';
 
-const images = [img1, img2, img3, img4, img5, img6];
+
+
+
+
+const images = [img1, img2, img3, img4, img5, img6, img7, img8 ];
 
 const containerVariants = {
   hidden: {},
@@ -86,9 +91,9 @@ const ArtGallerySection = () => {
                 Do you need
                 <div className={styles.flip}>
                   <div>
-                    <div>Custom Portrait</div>
-                    <div>Meaningful Gift</div>
-                    <div>One-of-a-Kind Artwork</div>
+                    <div>an Artwork</div>
+                    <div>an Artwork</div>
+                    <div>an Artwork</div>
                   </div>
                 </div>
 
