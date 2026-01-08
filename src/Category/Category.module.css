@@ -173,9 +173,9 @@
 .useCaseGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+  gap: 3rem;
   gap: auto;
-  
+ 
 }
 
 
@@ -279,7 +279,7 @@
 .priceCard {
   border: 1px solid #eee;
   border-radius: 14px;
-  padding: 1.2rem;
+  padding: 1rem 0.5rem;
   background: #fafafa;
    background: rgba(255, 255, 255, 0.7);
   transition: transform 0.3s ease;

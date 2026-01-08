@@ -16,13 +16,13 @@ import {
 const categories = ["All", "Abstract", "Portrait", "Nature"];
 
 const PRICE_DATA = [
-  { size: "8 × 10 in", pencil: "30,000", pen: "35,000", paint: "40,000" },
-  { size: "10 × 12 in", pencil: "40,000", pen: "45,000", paint: "50,000" },
-  { size: "12 × 15 in", pencil: "50,000", pen: "55,000", paint: "60,000" },
-  { size: "16 × 20 in", pencil: "60,000", pen: "65,000", paint: "70,000" },
-  { size: "20 × 24 in", pencil: "70,000", pen: "75,000", paint: "80,000" },
-  { size: "20 × 36 in", pencil: "80,000", pen: "85,000", paint: "90,000" },
-  { size: "24 × 40 in", pencil: "90,000", pen: "95,000", paint: "100,000" },
+  { size: "8 × 10 inches", pencil: "30,000", pen: "35,000", paint: "40,000" },
+  { size: "10 × 12 inches", pencil: "40,000", pen: "45,000", paint: "50,000" },
+  { size: "12 × 15 inches", pencil: "50,000", pen: "55,000", paint: "60,000" },
+  { size: "16 × 20 inches", pencil: "60,000", pen: "65,000", paint: "70,000" },
+  { size: "20 × 24 inches", pencil: "70,000", pen: "75,000", paint: "80,000" },
+  { size: "20 × 36 inches", pencil: "80,000", pen: "85,000", paint: "90,000" },
+  { size: "24 × 40 inches", pencil: "90,000", pen: "95,000", paint: "100,000" },
 ];
 
 const USE_CASES = [
@@ -78,7 +78,7 @@ const CategorySection = () => {
       : artworks.filter((art) => art.category === activeCategory);
 
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id="category">
       <div className={styles.bgImage} />
 
       <div className={styles.container}>
@@ -209,6 +209,9 @@ const CategorySection = () => {
                   </div>
                 ))}
               </div>
+              
+              
+
             </motion.div>
           )}
         </AnimatePresence>
