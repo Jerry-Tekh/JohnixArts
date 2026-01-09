@@ -47,8 +47,18 @@ import NAT6 from './../assets/ShopImages/NAT6.jpg';
 
 
  export const artworks = [
+   {
+     id: 1,
+     name: "Silent Face",
+     category: "Portrait",
+     image: POR6,
+     sizes: [
+       { label: "Medium", value: "M", price: 18000 },
+       { label: "Large", value: "L", price: 23000 },
+     ],
+   },
   {
-    id: 1,
+    id: 2,
     name: "Golden Flow",
     category: "Abstract",
     image: ABS2,
@@ -56,16 +66,6 @@ import NAT6 from './../assets/ShopImages/NAT6.jpg';
       { label: "Small", value: "S", price: 10000 },
       { label: "Medium", value: "M", price: 15000 },
       { label: "Large", value: "L", price: 20000 },
-    ],
-  },
-  {
-    id: 2,
-    name: "Silent Face",
-    category: "Portrait",
-    image: POR6,
-    sizes: [
-      { label: "Medium", value: "M", price: 18000 },
-      { label: "Large", value: "L", price: 23000 },
     ],
   },
   {

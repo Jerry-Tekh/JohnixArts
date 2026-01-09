@@ -17,6 +17,7 @@
   z-index: 10;
   position: relative;
   padding: 0 3rem;
+  
 }
 
 .contactBtn {
@@ -53,8 +54,8 @@
   position: relative;
   cursor: pointer;
   display: flex;
-  width: 150px;
-  height: 100px;
+  width: 120px;
+  height: 90px;
 }
 .logoWrapper img {
   width: 100%;
@@ -75,7 +76,7 @@
 /* Title */
 .title {
   text-align: center;
-  margin: 1rem 0;
+  
   font-size: 3.3rem;
   font-weight: 400;
   font-family: var(--banner-font);
@@ -90,14 +91,25 @@
   gap: 2rem;
   z-index: 10;
   position: relative;
+ background: rgba(5, 5, 5, 0.1);
+
+   position: sticky;
+  top: 0;
+  z-index: 1500;
+  backdrop-filter: blur(150px);
+
+  padding: 1.5rem 0;
+
 }
+
+
 
 .navDesktop a {
   text-decoration: none;
   color: #333;
   font-weight: 500;
   position: relative;
-
+  font-size: 1.2rem;
   font-family: var(--banner3-font);
   z-index: 10;
 }
@@ -206,6 +218,23 @@
 
 /* Responsive */
 @media (max-width: 500px) {
+ .header {
+    padding-top: 1rem;
+  }
+  .topBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+   
+
+    backdrop-filter: blur(40px);
+
+    padding: 0.75rem 1rem;
+   
+  }
+
   .contactBtn {
     display: none;
   }
@@ -238,12 +267,9 @@
   .header {
     padding: 1.5rem 1rem 2rem;
   }
+  
 
-  /* Top bar (menu + cart) */
-  .topBar {
-    padding: 0 0 0 0;
   }
-}
 
 /* Landscape mode */
 @media (orientation: landscape) and (max-width: 1024px) {
