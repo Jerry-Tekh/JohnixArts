@@ -51,7 +51,9 @@ const Footer = () => {
         </div>
 
         <div className={styles.links}>
-          <Link to="/shop" > <a href="#">Shop</a> </Link>
+         {/* <Link to="/shop" > <a href="#">Shop</a> </Link>*/}
+       
+        
           <Link to="/contact">Contact</Link>
         </div>
       </div>
